@@ -1,8 +1,0 @@
-#J4LOG版本号
-j4log.version=2
-#J4LOG日志默认根目录
-j4log.root=/data/logs/resin11/
-#J4LOG日志默认级别
-j4log.level=DEBUG
-#缺省日志，万一写日志出现异常如文件不可写啥的，都会写到这里
-_j4log=DEBUG

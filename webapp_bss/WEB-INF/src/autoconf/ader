@@ -1,3 +1,0 @@
-client_url=http://10.0.36.180:9000/service_ader/AderService
-client_read_timeout=3000
-client_connect_timeout=3000

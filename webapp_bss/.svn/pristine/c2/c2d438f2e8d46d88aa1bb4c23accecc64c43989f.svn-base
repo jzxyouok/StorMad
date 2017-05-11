@@ -1,3 +1,0 @@
-upload_image_type=img,jpg,jpeg,png,bmp,tiff,gif
-upload_base_path=/data/static
-img_prefix=https://superip.yonghui.cn/static

@@ -1,7 +1,0 @@
-client_url_common=http://10.26.209.216:9000/service_common/CommonService
-client_read_timeout_common=5000
-client_connect_timeout_common=3000
-
-client_url_areashop=http://10.26.209.216:9000/service_common/AreaShopService
-client_read_timeout_areashop=5000
-client_connect_timeout_areashop=3000

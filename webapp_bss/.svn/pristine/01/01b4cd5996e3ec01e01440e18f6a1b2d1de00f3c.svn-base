@@ -1,3 +1,0 @@
-client_url_bid=http://10.26.209.216:9000/service_bid/BidService
-client_read_timeout_bid=5000
-client_connect_timeout_bid=3000

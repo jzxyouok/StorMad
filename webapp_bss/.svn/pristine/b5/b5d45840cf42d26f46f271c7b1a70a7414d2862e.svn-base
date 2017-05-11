@@ -1,3 +1,0 @@
-client_url=http://10.26.209.216:9003/service_bidplan/BidPlanService
-client_read_timeout=3000
-client_connect_timeout=3000
