@@ -1,0 +1,51 @@
+package com.yonghui.webapp.bp.api.ader;
+
+import java.io.IOException;
+import java.io.Writer;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.feizhu.webutil.net.CookieBox;
+import com.yonghui.comp.ader.share.AderClient;
+import com.yonghui.comp.ader.share.AderService;
+import com.yonghui.comp.ader.share.bean.AderEntity;
+import com.yonghui.comp.ader.share.enums.StatusEnum;
+import com.yonghui.webapp.bp.api.ApiHandler;
+import com.yonghui.webapp.bp.util.JsonUtil;
+
+import cn770880.jutil.data.RespWrapper;
+
+public class ApproveHandler implements ApiHandler {
+
+	@Override
+	public void handle(HttpServletRequest request, HttpServletResponse response, Writer out, AderEntity ader)
+			throws IOException {
+		Map<String, Object> map = new HashMap<String, Object>();
+		RespWrapper<Map<String, Object>> resp = RespWrapper.makeResp(0, "", map);
+		
+		int status = 1;
+		map.put("status", status);
+		map.put("statusCN", StatusEnum.getStatusCN(status));
+		resp.setObj(map);
+		
+		AderService service = AderClient.getAderService();
+		
+		CookieBox cookieBox = new CookieBox( request, response );
+		Cookie cookie = cookieBox.getCookie( "bp_sid");
+		cookie.setValue("");
+		
+		RespWrapper<AderEntity> resp1 =  service.getAderBySid("526B10A9F9A42AF5EA2410DD0CE71D8C564AF98D023EEFC6");
+		System.out.println("结果["+resp1.getErrMsg()+"");
+		AderEntity entity = resp1.getObj();
+		if(entity != null) {
+			System.out.println("dd" + entity.getAdUin());
+		}
+		
+		JsonUtil.MAPPER.writeValue(out, resp);
+	}
+
+}

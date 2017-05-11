@@ -1,0 +1,367 @@
+/* global style start */
+
+.layui-layer-page .layui-layer-content {
+    padding: 20px 40px;
+    overflow: inherit !important;
+}
+
+.layui-layer-content .layui-form .layui-form-item .layui-form-select dl {
+    max-height: 150px;
+}
+
+.layui-layer-content .layui-form .layui-form-item .button-box {
+    padding-top: 20px;
+}
+
+
+/* global style end */
+
+
+/*adPreview*/
+
+.layui-layer-content .ad-preview {
+    /*padding: -20px;*/
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.layui-layer-content .ad-preview img {
+    width: auto;
+    height: 400px;
+}
+
+.layui-layer-content .ad-preview p {
+    font-size: 12px;
+    line-height: 40px;
+}
+
+
+/*adPreview end*/
+
+
+/*adReviewPass*/
+
+.layui-layer-content .ad-review-pass .layui-form .layui-form-label {
+    width: 130px;
+    margin-left: 0;
+}
+
+.layui-layer-content .ad-review-pass .layui-form .layui-form-item .layui-input-inline {
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.layui-layer-content .ad-review-pass .layui-form .layui-form-item .img-view {
+    height: 72px;
+}
+
+.layui-layer-content .ad-review-pass .layui-form .layui-form-item .img-view img {
+    width: auto;
+    height: 72px;
+}
+
+.layui-layer-content .ad-review-pass .layui-form .layui-form-item .img-view a {
+    color: #ff0000;
+}
+
+
+/*adReviewPass end*/
+
+
+/*addCash*/
+
+.layui-layer-content .add-cash {
+    padding: 20px;
+}
+
+.layui-layer-content .add-cash .layui-form-label {
+    float: left;
+    display: block;
+    padding: 0;
+    width: 150px;
+    line-height: 30px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.layui-layer-content .add-cash .layui-form-item .layui-input-inline:last-child {
+    width: auto;
+    margin-left: 0;
+}
+
+.layui-layer-content .add-cash .layui-input {
+    display: inline-block;
+    width: 195px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.layui-layer-content .add-cash span {
+    display: inline-block;
+}
+
+.layui-layer-content .add-cash .button-box {
+    display: inherit;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.layui-layer-content .add-cash .button-box button {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 35px;
+}
+
+.layui-layer-content .add-cash .button-box .layui-btn {
+    background-color: #2089ff;
+}
+
+.layui-layer-content .add-cash .button-box .layui-btn-primary {
+    color: #2089ff;
+    background-color: transparent;
+    border: 1px solid #2089ff;
+}
+
+
+/*addCash end*/
+
+
+/*addCash-confirm*/
+
+.layui-layer-content .add-cash> p {
+    text-align: center;
+    line-height: 24px;
+}
+
+.layui-layer-content .add-cash> p.confirm> span {
+    width: 50px;
+    height: 50px;
+    background: url(../img/css-sprite.png) -200px 0 no-repeat;
+    margin-bottom: 30px;
+}
+
+.layui-layer-content .add-cash> p:nth-child(2) {
+    font-size: 14px;
+}
+
+.layui-layer-content .add-cash> p:nth-child(2) span {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+
+/*addCash-confirm end*/
+
+
+/*infoReview*/
+
+.layui-layer-content .info-review {
+    padding: 20px;
+    text-align: center;
+}
+
+.layui-layer-content .info-review> p {
+    text-align: center;
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.layui-layer-content .info-review> p:nth-child(1)> span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: url(../img/css-sprite.png) -200px 0 no-repeat;
+    margin-bottom: 20px;
+}
+
+.layui-layer-content .info-review> p:nth-child(2) {
+    font-size: 14px;
+}
+
+.layui-layer-content .info-review> p:nth-child(2) span {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.layui-layer-content .info-review .button-box {
+    padding-top: 15px;
+}
+
+
+/*infoReview end*/
+
+
+/*infoReview*/
+
+.layui-layer-content .ad-management-pic img {
+    width: 100%;
+    height: auto;
+}
+
+.layui-layer-content .ad-management-pic .layui-form-select ul li.layui-this {
+    background-color: #2089ff;
+    color: #fff;
+}
+
+
+/*infoReview end*/
+
+
+/*adAreaEdit*/
+
+
+/*.layui-layer-content .ad-area-edit {
+    padding: 30px 50px;
+}
+
+.layui-layer-content .ad-area-edit .layui-form label {
+    text-align: right;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+.layui-layer-content .ad-area-edit .layui-form .layui-input {
+    height: 30px;
+    line-height: 30px;
+}
+
+.layui-layer-content .ad-area-edit .layui-form .layui-input-inline {
+    width: 100%;
+    margin: 0;
+}
+
+.layui-layer-content .ad-area-edit .layui-form .layui-form-select ul li.layui-this {
+    background-color: #2089ff;
+    color: #fff;
+}
+
+.layui-layer-content .ad-area-edit .layui-form button {
+    height: 30px;
+    line-height: 30px;
+    background-color: #2089ff;
+    padding: 0 20px;
+}
+
+.layui-layer-content .ad-area-edit .layui-form .layui-upload-button {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #666;
+}
+
+.layui-layer-content .ad-area-edit .layui-form .layui-upload-icon i {
+    color: #2089ff;
+}
+
+.layui-layer-content .ad-area-edit .layui-form .layui-upload-button:active {
+    border: 1px solid #2089ff;
+}
+
+.layui-layer-content .ad-area-edit .layui-form p.tips {
+    color: #666;
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.layui-layer-content .ad-area-edit .layui-form .button-box {
+    display: inherit;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.layui-layer-content .ad-area-edit .layui-form .button-box .layui-btn-primary {
+    color: #2089ff;
+    background-color: transparent;
+    border: 1px solid #2089ff;
+}*/
+
+
+/*adAreaEdit end*/
+
+
+/*addSpecification*/
+
+.layui-layer-content .add-specification .layui-form .layui-form-label {
+    margin-left: 0;
+}
+
+.layui-layer-content .add-specification .layui-form .layui-input-block {
+    margin-left: 80px;
+}
+
+.layui-layer-content .add-specification .layui-form .layui-input-block .layui-input {
+    min-width: 300px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.layui-layer-content .add-specification .type {
+    padding: 15px 10px;
+    border: 1px dashed #cbcbcb;
+}
+
+.layui-layer-content .add-specification .type .layui-form-item:last-child {
+    margin-bottom: 0;
+}
+
+.layui-layer-content .add-specification .type .layui-form-label {
+    width: 120px;
+    text-align: right;
+}
+
+.layui-layer-content .add-specification .type .layui-input-block {
+    margin-left: 130px;
+}
+
+
+/*addSpecification end*/
+
+
+/*invoicePreview*/
+
+.layui-layer-content .invoice-preview p {
+    color: #949494;
+    font-size: 12px;
+}
+
+.layui-layer-content .invoice-preview p span {
+    color: #000;
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.layui-layer-content .invoice-info-review p span:first-child {
+    display: inline-block;
+    color: #949494;
+    width: 70px;
+    text-align: right;
+}
+
+.layui-layer-content .invoice-info-review .button-box {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.layui-layer-content .invoice-info-review .button-box a {
+    color: #2089ff;
+    line-height: 30px;
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+
+/*invoicePreview end*/
+
+/*administrators-window*/
+
+.layui-layer-content .administrators-window .layui-form .layui-form-label {
+    width: 90px;
+    margin-right: 10px;
+}
+
+.layui-layer-content .administrators-window .layui-form .layui-input-inline {
+    min-width: 200px;
+}
+
+
+/*administrators-window end*/

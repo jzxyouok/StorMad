@@ -1,0 +1,117 @@
+function API() {}
+API.prototype = {
+    post: function(url, data, cb) {
+        $.ajax({
+            type: 'POST',
+            url: yonghui.contextPath + url,
+            dataType: 'json',
+            data: data,
+            success: cb
+        });
+    },
+    simple: function(str, obj) {
+        return str.replace(/\$\w+\$/gi, function(matchs) {
+            var returns = obj[matchs.replace(/\$/g, "")];
+            return typeof returns === "undefined" ? "" : returns;
+        });
+    }
+};
+var api = new API();
+
+function Bidplan() {
+    this.init();
+}
+Bidplan.prototype = {
+    getData: function() {
+        var self = this;
+        api.post('/api/bidplan/query.jsp', {}, function(res) {
+            if (0 === res.errCode) {
+                var bigPlanTab = '';
+                var bigPlanItem = '<tr data-bpId="$bpId$"><td><div class="checkbox"><label><span class="checkbox"><input name="" id="" type="checkbox"><i></i></span></label></div></td><td>$bpName$</td><td>$time$</td><td><span class="status-tips ad-Preview"><i class="tips-icon"></i><a href="javascript:void(0);">支付后页面</a></span></td><td><span class="status-tips store-List"><i class="tips-icon"></i><a href="javascript:void(0);">查看门店</a></span></td><td>$chargeCN$</td><td>￥$cbasePrice$</td><td>$statusCN$</td></tr><tr class="extend"><td colspan="8"><div class="row"><div class="col-md-1 choice-title">选择行业： </div><div class="col-md-8 industry">$industries$</div><div class="col-md-3 perfunctory"><p><span class="industry-Type">$industry$</span>行业竞拍热度： <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star disabled" aria-hidden="true"></i></p><button type="button" class="btn btn-default">竞拍</button></div></div></td></tr>';
+                $.each(res.obj.record, function(n, item) {
+                    bigPlanTab += api.simple(bigPlanItem, {
+                        bpId: item.bpId,
+                        bpName: item.bpName,
+                        time: self.formatDate(item.startDate) + '至' + self.formatDate(item.endDate),
+                        chargeCN: item.chargeCN,
+                        cbasePrice: item.cbasePrice,
+                        statusCN: item.statusCN,
+                        industries: self.getIndustries(item.industries),
+                        industry: item.industries[0].iname
+                    });
+                });
+                $('#check_list').html(bigPlanTab);
+            } else {
+                layer.msg(res.errMsg);
+            }
+        });
+    },
+    getStarDegree: function(num) {
+        if (num < 30) {
+            return 1;
+        }
+        if (num > 30) {
+            return 2;
+        }
+        if (num > 60) {
+            return 3;
+        }
+        if (num > 100) {
+            return 4;
+        }
+        if (num > 200) {
+            return 5;
+        }
+    },
+    setStar: function(ele, num) {
+        $.each($(ele).find('.fa-star'), function(index, val) {
+            if (index > num) {
+                val.addClass('disabled');
+            }
+        });
+
+    },
+    getIndustries: function(industryList) {
+        var industries = '';
+        $.each(industryList, function(index, val) {
+            industries += '<button type="button">' + val.iname + '</button>';
+        });
+        return industries;
+    },
+    /**
+     * [把毫秒数转化成日期格式yy-mm-dd]
+     * @param  {[type]} time [毫秒数]
+     * @return {[type]}      [格式为yy-mm-dd的日期]
+     */
+    formatDate: function(time) {
+        var date = new Date(time);
+        return [date.getFullYear(), date.getMonth() + 1, date.getDate()].join('-');
+    },
+    seeStore: function() {
+        layer.open({
+            type: 1,
+            area: ['340px', 'auto'],
+            title: false, //隐藏默认标题
+            //title: ['该档期投放门店', 'color:#e6614f;font-size:14px;font-weight:bold;'], //自定义标题
+            shadeClose: true, //点击遮罩关闭
+            closeBtn: 0,
+            //content: '\<\div style="padding:20px;">自定义内容\<\/div>'
+            content: '<div id="storeList" class="frame-content"><div class="frame-body store-list"><h3>该档期投放门店</h3><ul><li>福建 厦门市 杏林万科店</li><li>福建 厦门市 杏林万科店</li><li>福建 厦门市 杏林万科店</li><li>福建 厦门市 杏林万科店</li><li>福建 厦门市 杏林万科店</li></ul></div></div>'
+        });
+    },
+    bindEvent: function() {
+        var self = this;
+         $('#check_list').on('click', '.industry button', function() {
+             $(this).addClass('active').siblings('button').removeClass('active');
+             $(this).closest('.extend').find('.industry-Type').html($(this).text())
+         });
+    },
+    init: function() {
+        this.getData();
+        this.bindEvent();
+    }
+}
+
+$(function() {
+    new Bidplan();
+});

@@ -1,0 +1,27 @@
+package com.yonghui.webapp.bss.api.invoice;
+
+import java.io.IOException;
+import java.io.Writer;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yonghui.comp.admin.share.bean.AdminEntity;
+import com.yonghui.webapp.bss.api.ApiHandler;
+
+import cn770880.jutil.string.StringUtil;
+
+public class QueryHandler implements ApiHandler {
+
+	@Override
+	public void handle(HttpServletRequest request, HttpServletResponse response, Writer out, AdminEntity admin)
+			throws IOException {
+		
+		String yearMonth = request.getParameter("yearMonth");
+		String corpName = request.getParameter("corpName");
+		int status = StringUtil.convertInt(request.getParameter("status"), 0);
+
+//		InvoiceService service = InvoiceClient.get
+	}
+
+}

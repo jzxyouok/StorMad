@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+			<meta name="renderer" content="webkit">
+		<meta name="keywords" content="keywords" />
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="img/favicon.ico">
+
+		<title>永辉竞价投放后台系统 - 广告主管理</title>
+
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="../extend/bootstrap/css/bootstrap.min.css">
+
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+		<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+		<script src="../assets/js/ie-emulation-modes-warning.js"></script>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+		<!-- extend css -->
+		<link rel="stylesheet" href="../extend/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="../extend/layui/css/layui.css">
+
+		<!-- Custom styles for this template -->
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../extend/sidebar-menu/sidebar-menu.css" />
+		<link rel="stylesheet" type="text/css" href="../css/global.css" />
+		<link rel="stylesheet" type="text/css" href="../css/open-window.css" />
+
+	</head>
+
+	<body class="ad-management-list">
+		<div class="wrapper">
+			<!--header-->
+			<header>
+				<div class="logo">
+					<a href="../index.html"><img src="../img/logo.png" /></a>
+				</div>
+				<div class="pull-right">
+					<p>欢迎您使用永辉竞价投放后台系统</p>
+					<a href="#"><i class="log-out-icon"></i><span>退出系统</span></a>
+
+				</div>
+			</header>
+			<!--header end-->
+
+			<!--section-->
+			<section class="container-fluid">
+				<div class="row">
+					<!--aside-->
+					<aside class="main-sidebar">
+						<section class="sidebar">
+							<ul class="sidebar-menu">
+								<!--<li class="header">主导航</li>-->
+								<li>
+									<a href="../index.html"><i class="menu-icon icon01"></i><span>广告审核</span></a>
+								</li>
+								<li class="treeview">
+									<a href="../bidplan/schedule-list.html">
+										<i class="menu-icon icon02"></i> <span>档期管理</span> <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="../bidplan/schedule-list.html"><i class="fa fa-circle" aria-hidden="true"></i> 档期列表 </a>
+										</li>
+										<li>
+											<a href="../bidplan/creat-schedule.html"><i class="fa fa-circle" aria-hidden="true"></i> 新增档期 </a>
+										</li>
+									</ul>
+								</li>
+								<li class="treeview active">
+									<a href="../ad/ad-management.html">
+										<i class="menu-icon icon03"></i> <span>广告主管理</span> <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+									</a>
+									<ul class="treeview-menu">
+										<li class="active">
+											<a href="../ad/ad-management.html"><i class="fa fa-circle" aria-hidden="true"></i> 广告主列表 </a>
+										</li>
+										<li>
+											<a href="../ad/ad-management-review.html"><i class="fa fa-circle" aria-hidden="true"></i> 开户审核 </a>
+										</li>
+									</ul>
+								</li>
+								<li class="treeview">
+									<a href="../ad/ad-area-list.html">
+										<i class="menu-icon icon04"></i> <span>广告位管理</span> <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="../ad/ad-area-list.html"><i class="fa fa-circle" aria-hidden="true"></i> 广告位列表 </a>
+										</li>
+										<li>
+											<a href="../ad/ad-specification.html"><i class="fa fa-circle" aria-hidden="true"></i> 规格管理 </a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="../invoice/invoice-review.html"><i class="menu-icon icon05"></i> <span>发票审核</span></a>
+								</li>
+								<li>
+									<a href="../logs/operation-log.html"><i class="menu-icon icon06"></i> <span>操作日志</span></a>
+								</li>
+								<li>
+									<a href="../admin/administrators.html"><i class="menu-icon icon07"></i> <span>管理员</span></a>
+								</li>
+							</ul>
+						</section>
+					</aside>
+					<!--aside end-->
+
+					<!--mainBody-->
+					<div class="col-xs-12 mainBody">
+						<!--top-->
+						<div class="top">
+							<div class="topBox">
+								<div class="title">
+									<h2>广告主列表</h2>
+									<p class="pull-right"><i class="fa fa-map-marker" aria-hidden="true"></i>当前位置：<span>广告主管理</span> > <span>广告主列表</span></p>
+								</div>
+								<div class="search-box">
+									<form class="layui-form" action="">
+										<div class="layui-form-item">
+											<label class="layui-form-label">广告主：</label>
+											<div class="layui-input-inline">
+												<input class="layui-input" id="corpName" type="text" placeholder="请输入广告主名称">
+											</div>
+
+											<label class="layui-form-label">账户状态：</label>
+											<div class="layui-input-inline">
+												<select name="quiz1" id="status">
+													<option value="" selected="">请选择账户状态</option>
+													<option vaue="">全部</option>
+													<option value="正常">正常</option>
+													<option value="停用">停用</option>
+												</select>
+											</div>
+
+											<div class="layui-input-inline">
+												<button type="button" class="layui-btn" id="btnSearch" lay-submit="" lay-filter="">搜索</button>
+											</div>
+
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<!--top end-->
+
+						<!--content-->
+						<div class="content">
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>编号</th>
+											<th>广告主</th>
+											<th>账户状态</th>
+											<th>账户余额</th>
+											<th>现金余额</th>
+											<th>货款余额</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody id="aderList">
+										<!-- <tr>
+											<td>1</td>
+											<td>
+												<a href="ad-management-rewrite.html">宝洁中秋迎国庆促销活动</a>
+											</td>
+											<td>正常</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>
+												<a class="add-Cash" href="#">添加金额</a> |
+												<a href="#">停用</a> |
+												<a class="active-status" href="#">启用</a>
+											</td>
+										</tr>
+										<tr class="active">
+											<td>2</td>
+											<td>
+												<a href="ad-management-rewrite.html">宝洁中秋迎国庆促销活动</a>
+											</td>
+											<td>正常</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>
+												<a class="add-Cash-Confirm" href="#">添加金额</a> |
+												<a href="#">停用</a> |
+												<a href="#">启用</a>
+											</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>
+												<a href="ad-management-rewrite.html">宝洁中秋迎国庆促销活动</a>
+											</td>
+											<td>正常</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>
+												<a class="" href="#">添加金额</a> |
+												<a href="#">停用</a> |
+												<a href="#">启用</a>
+											</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>
+												<a href="ad-management-rewrite.html">宝洁中秋迎国庆促销活动</a>
+											</td>
+											<td>正常</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>
+												<a class="add-Cash" href="#">添加金额</a> |
+												<a href="#">停用</a> |
+												<a href="#">启用</a>
+											</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>
+												<a href="ad-management-rewrite.html">宝洁中秋迎国庆促销活动</a>
+											</td>
+											<td>正常</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>￥<span>0.00</span>元</td>
+											<td>
+												<a class="add-Cash" href="#">添加金额</a> |
+												<a href="#">停用</a> |
+												<a href="#">启用</a>
+											</td>
+										</tr> -->
+									</tbody>
+								</table>
+							</div>
+							<div id="pageNumber" class="page-number"></div>
+						</div>
+						<!--content end-->
+
+					</div>
+					<!--mainBody end-->
+					<!--footer-->
+					<footer>
+						<p>客服电话：0591-86290888<br /> Copyright @2016 永辉超市股份有限公司 All Rights Reserved</p>
+					</footer>
+					<!--footer end-->
+				</div>
+			</section>
+			<!--section end-->
+
+		</div>
+
+		<!--弹窗-->
+
+		<!-- addCash -->
+		<div id="addCash" class="frame-content" style="display: none;">
+			<div class="frame-body add-cash">
+				<form class="layui-form" action="">
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">请选择添加金额类型：</label>
+						<div class="layui-input-inline">
+							<select name="quiz1">
+								<!-- <option value="" selected="">类型</option> -->
+								<option value="现金" selected>现金</option>
+								<option value="货款">货款</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">输入金额：</label>
+						<div class="layui-input-inline">
+							<input name=" " lay-verify=" " autocomplete="on" placeholder="最多输入￥100,000" class="layui-input" id="cash" type="text">
+							<span>元</span>
+						</div>
+					</div>
+
+				</form>
+
+				<div class="layui-input-inline button-box">
+					<button class="layui-btn" type="button" lay-submit="" lay-filter=" " id="btnConfirm">确认</button>
+					<button class="layui-btn layui-btn-primary" type="button" id="addCashReturn">返回</button>
+				</div>
+
+			</div>
+		</div>
+		<!-- addCash end -->
+
+		<!-- addCash-confirm -->
+		<!-- <div id="addCash-confirm" class="frame-content" style="display: none;">
+			<div class="frame-body add-cash">
+				<p class="confirm"><span></span></p>
+				<p>即将添加<span>10000元</span>至账户：<span>宝洁</span></p>
+				<p>请确认款项是否成功对公转账，再次确认后将无法撤回操作，是否确认？</p>
+
+				<div class="layui-input-inline button-box">
+					<button class="layui-btn" type="button" lay-submit="" lay-filter=" ">确认</button>
+					<button class="layui-btn layui-btn-primary" type="button">返回</button>
+				</div>
+
+			</div>
+		</div> -->
+		<!-- addCash-confirm end -->
+
+		<!-- addCash-success -->
+		<!--<div id="addCash-success" class="frame-content" style="display: none;">
+			<div class="frame-body add-cash">
+				<p class="success"><span></span></p>
+				<p class="success-tips">添加成功<br /> 已成功添加
+					<span>1000元</span>至账户：<span>宝洁</span></p>
+
+				<div class="layui-input-inline button-box">
+					<button class="layui-btn" type="button" lay-submit="" lay-filter=" ">确认添加</button>
+					<button class="layui-btn layui-btn-primary" type="button">返回</button>
+				</div>
+
+			</div>
+		</div>-->
+		<!-- addCash-success end -->
+
+		<!--弹窗-->
+
+		<!-- jQuery -->
+		<script src="../js/jquery.min.js"></script>
+		<!--<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>-->
+
+		<!-- Layui JavaScript -->
+		<script src="../extend/layui/layui.js"></script>
+
+		<!--layer-v2.4 弹层-->
+		<!--<script src="extend/layer/layer.js"></script>-->
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="../extend/bootstrap/js/bootstrap.min.js"></script>
+		<!--<script src="extend/bootstrap-switch/js/bootstrap-switch.js"></script>-->
+
+		<!-- JavaScript -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script>
+			window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')
+		</script>
+
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+		<!--custom-->
+		<script src="../js/custom.js"></script>
+
+		<!--open-window-->
+		<!-- <script src="../js/open-window.js"></script> -->
+
+		<!--sidebar-menu-->
+		<script src="../extend/sidebar-menu/sidebar-menu.js"></script>
+
+		<script>
+			$.sidebarMenu($('.sidebar-menu'))
+		</script>
+
+		<!-- <script>
+			layui.use('laypage', function() {
+				var laypage = layui.laypage,
+					layer = layui.layer;
+
+				laypage({
+					cont: 'pageNumber',
+					pages: 5,
+					skin: '#2089ff'
+				});
+
+			});
+		</script> -->
+		<script src="../js/common.js"></script>
+		<script src="./js/ad-management.js"></script>
+
+	</body>
+
+</html>

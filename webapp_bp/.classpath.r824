@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="WEB-INF/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/ActivityService-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/CartService-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-cli-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-codec-1.5.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/ConfCenter-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/hessian-4.0.37.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/httpclient-4.2.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/httpcore-4.2.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/javaee-16.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jutil-1.0.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/mysql-connector-java-5.1.34-bin.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/OrderService-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/proxool-0.8.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/UserService-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/webutil-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jackson-annotations-2.2.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jackson-core-2.2.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jackson-databind-2.2.3.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

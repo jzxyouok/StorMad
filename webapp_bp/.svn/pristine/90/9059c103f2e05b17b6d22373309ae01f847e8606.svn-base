@@ -1,0 +1,106 @@
+package com.yonghui.webapp.bp.resp.bid;
+
+import java.io.Serializable;
+import java.util.List;
+
+import com.yonghui.comp.ad.share.bean.AdLocation;
+
+public class GetMaxBidLogResp implements Serializable {
+
+	private static final long serialVersionUID = 242763397739831339L;
+	
+	private String blId;	//标识字段
+	private int bpId;	//档期ID
+	private String bpName;	//档期名称
+	private long cStartTime;	//投放开始时间
+	private long cEndTime;	//投放结束时间
+	private String iName;	//行业名称
+	private List<AdLocation> alList;	//广告位列表
+	private int chargeType;	//收费方式：1、按时段收费
+	private int cBasePrice;	//竞拍底价
+	private int maxMoney;	//当期档期行业最高出价
+	private int cIncRange;	//竞拍加价幅度
+	private int money;	//竞投金额
+	
+	public String getBlId() {
+		return blId;
+	}
+	public void setBlId(String blId) {
+		this.blId = blId;
+	}
+	public int getBpId() {
+		return bpId;
+	}
+	public void setBpId(int bpId) {
+		this.bpId = bpId;
+	}
+	public String getBpName() {
+		return bpName;
+	}
+	public void setBpName(String bpName) {
+		this.bpName = bpName;
+	}
+	public long getCStartTime() {
+		return cStartTime;
+	}
+	public void setCStartTime(long cStartTime) {
+		this.cStartTime = cStartTime;
+	}
+	public long getCEndTime() {
+		return cEndTime;
+	}
+	public void setCEndTime(long cEndTime) {
+		this.cEndTime = cEndTime;
+	}
+	public String getIName() {
+		return iName;
+	}
+	public void setIName(String iName) {
+		this.iName = iName;
+	}
+	public List<AdLocation> getAlList() {
+		return alList;
+	}
+	public void setAlList(List<AdLocation> alList) {
+		this.alList = alList;
+	}
+	public int getChargeType() {
+		return chargeType;
+	}
+	public void setChargeType(int chargeType) {
+		this.chargeType = chargeType;
+	}
+	public int getCBasePrice() {
+		return cBasePrice;
+	}
+	public void setCBasePrice(int cBasePrice) {
+		this.cBasePrice = cBasePrice;
+	}
+	public int getMaxMoney() {
+		return maxMoney;
+	}
+	public void setMaxMoney(int maxMoney) {
+		this.maxMoney = maxMoney;
+	}
+	public int getCIncRange() {
+		return cIncRange;
+	}
+	public void setCIncRange(int cIncRange) {
+		this.cIncRange = cIncRange;
+	}
+	public int getMoney() {
+		return money;
+	}
+	public void setMoney(int money) {
+		this.money = money;
+	}
+	@Override
+	public String toString() {
+		return "GetMaxBidLogResp [blId=" + blId + ", bpId=" + bpId
+				+ ", bpName=" + bpName + ", cStartTime=" + cStartTime
+				+ ", cEndTime=" + cEndTime + ", iName=" + iName + ", alList="
+				+ alList + ", chargeType=" + chargeType + ", cBasePrice="
+				+ cBasePrice + ", maxMoney=" + maxMoney + ", cIncRange="
+				+ cIncRange + ", money=" + money + "]";
+	}
+}

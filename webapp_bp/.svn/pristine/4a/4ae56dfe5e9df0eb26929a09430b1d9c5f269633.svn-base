@@ -1,0 +1,21 @@
+var dsno;
+function getStore() {
+    var money = sessionStorage.getItem("money");
+    var wxUrl = sessionStorage.getItem("wxUrl");
+    var tradeno = sessionStorage.getItem("tradeno");
+    var finishTime = sessionStorage.getItem("finishTime");
+    dsno=tradeno;
+    $('.cash').html('￥' + money);
+    $('.img-wxpay img').attr('src', wxUrl);
+    if (money || wxUrl || dsno||finishTime||dsno) {
+        sessionStorage.getItem("money", "");
+        sessionStorage.getItem("wxUrl", "");
+        sessionStorage.getItem("tradeno", "");
+        sessionStorage.getItem("finishTime", "");
+        sessionStorage.getItem("dsno", "");
+    }
+}
+$(document).ready(function() {
+    getStore();
+    setInterval("judgeState()",2000);
+});

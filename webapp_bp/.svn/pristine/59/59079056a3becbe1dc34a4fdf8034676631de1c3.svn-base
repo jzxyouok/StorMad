@@ -1,0 +1,15 @@
+client_url_adinfo=http://10.26.209.216:9000/service_ad/AdInfoService
+client_read_timeout_adinfo=5000
+client_connect_timeout_adinfo=3000
+
+client_url_spread=http://10.26.209.216:9000/service_ad/SpreadService
+client_read_timeout_spread=5000
+client_connect_timeout_spread=3000
+
+client_url_adsize=http://10.26.209.216:9000/service_ad/AdSizeService
+client_read_timeout_adsize=5000
+client_connect_timeout_adsize=3000
+
+client_url_adlocation=http://10.26.209.216:9000/service_ad/AdLocationService
+client_read_timeout_adlocation=5000
+client_connect_timeout_adlocation=3000

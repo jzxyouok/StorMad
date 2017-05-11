@@ -1,0 +1,78 @@
+package com.yonghui.webapp.bss.api.ader;
+
+import java.io.IOException;
+import java.io.Writer;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yonghui.comp.ader.share.AderClient;
+import com.yonghui.comp.ader.share.AderService;
+import com.yonghui.comp.ader.share.bean.AderEntity;
+import com.yonghui.comp.ader.share.enums.StatusEnum;
+import com.yonghui.webapp.bss.api.ApiHandler;
+import com.yonghui.webapp.bss.util.JsonUtil;
+
+import cn770880.jutil.data.RespWrapper;
+
+public class RegHandler implements ApiHandler {
+
+	@Override
+	public void handle(HttpServletRequest request, HttpServletResponse response, Writer out, AderEntity ader)
+			throws IOException {
+		
+		AderEntity entity = new AderEntity();
+		String corporation = request.getParameter("corp");
+		String province = request.getParameter("province");
+		String city = request.getParameter("city");
+		String district = request.getParameter("district");
+		String legalPerson = "";
+		String legalIdcard = "";
+		String bank = "";
+		String accountName = "";
+		String cardNo = "";
+		String loginName = "";
+		String password = "";
+		String contact = "";
+		String phone = "";
+		String email = "";
+		String orgCode = "";
+		String busiRegNo = "";
+		String logoUrl = "";
+		String busiLicenseUrl = "";
+		String taxCertifyUrl = "";
+		long applyTime = System.currentTimeMillis();
+		int approvePerson = 0;
+		
+		entity.setCorporation(corporation);
+		entity.setProvince(province);
+		entity.setCity(city);
+		entity.setDistrict(district);
+		entity.setLegalPerson(legalPerson);
+		entity.setLegalIdcard(legalIdcard);
+		entity.setBank(bank);
+		entity.setAccountName(accountName);
+		entity.setCardNo(cardNo);
+		entity.setLoginName(loginName);
+		entity.setPassword(password);
+		entity.setContact(contact);
+		entity.setPhone(phone);
+		entity.setEmail(email);
+		entity.setOrgCode(orgCode);
+		entity.setBusiRegNo(busiRegNo);
+		entity.setLogoUrl(logoUrl);
+		entity.setBusiLicenseUrl(busiLicenseUrl);
+		entity.setTaxCertifyUrl(taxCertifyUrl);
+		entity.setApplyTime(applyTime);
+		entity.setApprovePerson(approvePerson);
+		entity.setStatus(StatusEnum.APPLY.getStatus());
+		entity.setUtype(1);
+		entity.setNotifyPhone(phone);
+		
+		AderService service = AderClient.getAderService();
+		RespWrapper<Boolean> resp = service.apply(entity);
+		
+		JsonUtil.MAPPER.writeValue( out, resp);
+	}
+
+}

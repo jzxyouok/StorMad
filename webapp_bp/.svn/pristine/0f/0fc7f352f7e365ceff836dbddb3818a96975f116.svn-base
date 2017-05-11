@@ -1,0 +1,299 @@
+/*
+ * Globals
+ */
+
+body {
+	/*background-color: #fff;*/
+	/*min-height: 100%;*/
+}
+
+.hide {
+	display: none;
+}
+
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+
+::-moz-scrollbar {
+	width: 6px;
+	height: 6px;
+	background-color: #eae9e9;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+	background-color: #eae9e9;
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	box-shadow: none;
+	/*border-radius: 10px;*/
+	background-color: #fff;
+}
+
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+	/*border-radius: 10px;*/
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+	box-shadow: none;
+	background-color: #eae9e9;
+}
+
+
+/*
+ * Globals end
+ */
+
+
+/*nav*/
+
+.navbar {
+	position: relative;
+	height: 82px;
+	margin-bottom: 0;
+	border: 0;
+	border-bottom: 2px solid #c54f3f;
+	border-radius: 0;
+	background-color: #2d2b2b;
+}
+
+/*.navbar::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 82px;
+	background-color: #fff;
+	z-index: -1;
+}*/
+
+
+.navbar-header {
+	background-color: #fff;
+	
+}
+
+.navbar> .container-fluid {
+	padding: 0;
+	
+}
+
+.navbar> .container-fluid .navbar-brand {
+	float: left;
+	height: 80px;
+	line-height: 80px;
+	padding: 20px 40px 20px 40px;
+	margin: 0;
+	
+}
+
+.navbar-collapse {
+	background-color: #2d2b2b;
+}
+
+.navbar> .container {
+	background-color: #2d2b2b;
+}
+
+.navbar .left-bg {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 82px;
+	background-color: #fff;
+	z-index: -1;
+}
+
+
+/*navbar-nav*/
+
+.navbar-default .navbar-nav> li> a {
+	color: #fff !important;
+	font-size: 12px;
+	line-height: 80px;
+	/*padding: 0 20px;*/
+	padding: 0;
+	width: 100px;
+	text-align: center;
+}
+
+.navbar-default .navbar-nav> li> a .fa {
+	padding-left: 10px;
+
+	position: absolute;
+	top: 42%;
+	right: 10px;
+}
+
+.navbar-default .navbar-nav> li> a:hover {
+	background-color: #e6614f;
+}
+
+.navbar-default .navbar-nav> .open> a,
+.navbar-default .navbar-nav> .open> a:focus,
+.navbar-default .navbar-nav> .open> a:hover {
+	background-color: #e6614f;
+}
+
+
+.navbar-default .navbar-nav> .active> a,
+.navbar-default .navbar-nav> .active> a:focus,
+.navbar-default .navbar-nav> .active> a:hover {
+	background-color: #e6614f;
+	/*padding: 0 20px;*/
+	padding: 0;
+}
+
+
+/*navbar-nav end*/
+
+
+/*navbar-right*/
+
+.navbar-default {
+	padding-right: 40px;
+}
+
+.navbar-default .navbar-right> li {
+	/*padding: 20px 40px 0 0;*/
+}
+
+.navbar-default .navbar-right> li> a {
+	/*padding: 0;
+	line-height: 40px;*/
+}
+
+.navbar-default .navbar-right> li> a:hover,
+.navbar-default .navbar-right> li> a:focus,
+.navbar-default .navbar-right> .open> a,
+.navbar-default .navbar-right> .open> a:hover,
+.navbar-default .navbar-right> .open> a:focus {
+	/*background-color: transparent;*/
+}
+
+.navbar-default .navbar-right> li> a img {
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+
+
+/*navbar-right end*/
+
+
+/*dropdown-menu*/
+
+.dropdown-menu {
+	/*width: 100px !important;*/
+	min-width: 100px;
+	padding: 0;
+	margin: 0 !important;
+	font-size: 12px;
+	background-color: #3d3939;
+	border: none;
+	border-radius: 0px;
+	box-shadow: none;
+}
+
+.navbar-default .navbar-nav> .account-nav .dropdown-menu {
+	width: auto;
+	min-width: 160px;
+	left: -29px
+}
+
+.navbar-default .navbar-nav> .account-nav .dropdown-menu> li> a {
+	width: auto;
+	min-width: 160px;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+}
+
+.navbar-default .navbar-right .dropdown-menu {
+	/*margin-top: 21px !important;*/
+	width: auto;
+	min-width: 160px;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+}
+
+.navbar-default .navbar-right .dropdown-menu > li > a {
+    width: auto;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+}
+
+.dropdown-menu> li> a {
+	width: 100px;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+}
+
+.dropdown-menu> li> a:focus,
+.dropdown-menu> li> a:hover {
+	color: #fff;
+	background-color: #2d2b2b;
+}
+
+.dropdown-menu> .active> a,
+.dropdown-menu> .active> a:focus,
+.dropdown-menu> .active> a:hover {
+	background-color: #2d2b2b;
+}
+
+
+/*dropdown-menu end*/
+
+
+/*nav end*/
+
+
+/*switch*/
+
+.pull-right {
+	line-height: 90px;
+}
+
+.pull-right p {
+	margin-top: 0;
+}
+
+.bootstrap-switch {
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 2px;
+	border: 1px solid #d5d5d5;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
+	color: #666;
+	background: #f8f8f8;
+}
+
+
+/*switch end*/
+
+
+.table> thead> tr> th:first-child,
+.table> tbody> tr> td:first-child {
+	padding-left: 20px;
+}
+
+.table> thead> tr> th:last-child,
+.table> tbody> tr> td:last-child {
+	text-align: right;
+	padding-right: 20px;
+}

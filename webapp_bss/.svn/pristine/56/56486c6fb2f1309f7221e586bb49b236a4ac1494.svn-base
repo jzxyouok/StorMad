@@ -1,0 +1,33 @@
+/* --------------------------------------------------
+-------------------------------------------------- */
+
+
+/*table*/
+
+.content .table> tbody> tr> td> p {
+    position: relative;
+    margin-right: 30px;
+}
+
+.content .table> tbody> tr> td> p> span {
+    padding-right: 8px;
+}
+
+.content .table> tbody> tr> td> p> i {
+    position: absolute;
+    top: 14px;
+    /*left: 5px;*/
+    width: 23px;
+    height: 14px;
+}
+
+.content .table> tbody> tr> td> p> i.ad-preview-icon {
+    background: url(../img/css-sprite.png) -120px 0 no-repeat;
+}
+
+
+/*table end*/
+
+
+/* --------------------------------------------------
+-------------------------------------------------- */

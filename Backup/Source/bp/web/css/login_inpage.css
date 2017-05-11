@@ -1,0 +1,9 @@
+/* CSS Document */
+
+
+/*v2 客户系统首页*/
+.v2index .tips{ margin:20px; margin-bottom:0;}
+.srcArea{ padding:20px;}
+.inRpt{ margin:20px; border:1px dashed #ccc; padding-bottom:20px;}
+.inRpt>p{ line-height:36px; padding-left:20px;}
+.inRpt canvas{ width:620px; height:430px; margin:0 auto; display:block;}

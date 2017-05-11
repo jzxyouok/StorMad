@@ -1,0 +1,148 @@
+﻿aside.main-sidebar {
+	position: fixed;
+	top: 80px;
+	left: 0;
+	height: 100%;
+	min-height: 100%;
+	width: 260px;
+	z-index: 810;
+	background-color: #21242b;
+}
+
+.sidebar-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color: #21242b;
+}
+
+.sidebar-menu> li {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar-menu> li> a {
+	display: block;
+	color: #b8c7ce;
+	font-size: 16px;
+	line-height: 70px;
+	padding: 0 5px 0 56px;
+	border-left: 3px solid transparent;
+}
+
+.sidebar-menu> li> a> .fa {
+	font-size: 20px;
+	line-height: 70px;
+	padding-right: 20px;
+}
+
+.sidebar-menu> li:hover> a,
+.sidebar-menu> li.active> a {
+	color: #fff;
+	background: #2089ff;
+	border-left-color: #3c8dbc;
+}
+
+.sidebar-menu> li> .treeview-menu {
+	margin: 0 1px;
+	background: #000;
+}
+
+.sidebar-menu> li .label,
+.sidebar-menu> li .badge {
+	margin-top: 3px;
+	margin-right: 5px;
+}
+
+.sidebar-menu li.header {
+	padding: 10px 25px 10px 15px;
+	font-size: 12px;
+	color: #4b646f;
+	background: #1a2226;
+}
+
+.sidebar-menu li.active> a> .fa-angle-down {
+	transform: rotate(-180deg);
+	transition: .3s;
+	padding-left: 20px;
+}
+
+.sidebar-menu li.active> .treeview-menu {
+	display: block;
+}
+
+.sidebar-menu a {
+	color: #b8c7ce;
+	text-decoration: none;
+}
+
+.sidebar-menu .treeview-menu {
+	display: none;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	padding-left: 5px;
+}
+
+.sidebar-menu .treeview-menu .treeview-menu {
+	padding-left: 20px;
+}
+
+.sidebar-menu .treeview-menu> li {
+	margin: 0;
+}
+
+.sidebar-menu .treeview-menu> li> a {
+	display: block;
+	color: #fff;
+	font-size: 14px;
+	line-height: 70px;
+	padding: 0px 5px 0px 55px;
+}
+
+.sidebar-menu .treeview-menu> li> a .fa {
+	padding-right: 10px;
+}
+
+.sidebar-menu .treeview-menu> li.active> a,
+.sidebar-menu .treeview-menu> li> a:hover {
+	color: #2089ff;
+}
+
+.sidebar-menu> li> a .menu-icon {
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	position: absolute;
+	top: 25px;
+	left: 30px;
+}
+
+.sidebar-menu> li> a .icon01 {
+	background: url(../../img/css-sprite.png) 0 0 no-repeat;
+}
+
+.sidebar-menu> li> a .icon02 {
+	background: url(../../img/css-sprite.png) -20px 0 no-repeat;
+}
+
+.sidebar-menu> li> a .icon03 {
+	background: url(../../img/css-sprite.png) -40px 0 no-repeat;
+}
+
+.sidebar-menu> li> a .icon04 {
+	background: url(../../img/css-sprite.png) -60px 0 no-repeat;
+}
+
+.sidebar-menu> li> a .icon05 {
+	background: url(../../img/css-sprite.png) -80px 0 no-repeat;
+}
+
+.sidebar-menu> li> a .icon06 {
+	background: url(../../img/css-sprite.png) -100px 0 no-repeat;
+}
+
+.sidebar-menu> li> a .icon07 {
+	background: url(../../img/css-sprite.png) -300px 0 no-repeat;
+}

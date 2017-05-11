@@ -1,0 +1,54 @@
+package com.yonghui.webapp.bss.api.money;
+
+import java.io.IOException;
+import java.io.Writer;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yonghui.comp.admin.share.bean.AdminEntity;
+import com.yonghui.comp.money.share.DepositService;
+import com.yonghui.comp.money.share.MoneyClient;
+import com.yonghui.comp.money.share.bean.DepositEntity;
+import com.yonghui.webapp.bss.api.ApiHandler;
+import com.yonghui.webapp.bss.util.JsonUtil;
+
+import cn770880.jutil.data.RespWrapper;
+import cn770880.jutil.string.StringUtil;
+
+public class RechargeHandler implements ApiHandler {
+
+	@Override
+	public void handle(HttpServletRequest request, HttpServletResponse response, Writer out, AdminEntity admin)
+			throws IOException {
+		
+		RespWrapper<Boolean> resp = RespWrapper.makeResp(6201, "账户充值出错", false);
+		
+		int money = StringUtil.convertInt(request.getParameter("money"), 0);
+		int adUin = StringUtil.convertInt(request.getParameter("tuin"), 0);
+		int type = StringUtil.convertInt(request.getParameter("type"), 1);
+		int mode = StringUtil.convertInt(request.getParameter("mode"), 4);
+		
+		if(money == 0) {
+			resp.setErrMsg("充值金額為0，請重新輸入");
+			JsonUtil.MAPPER.writeValue(out, resp);
+			return;
+		}
+		if(adUin == 0) {
+			resp.setErrMsg("請選擇要充值的廣告主");
+			JsonUtil.MAPPER.writeValue(out, resp);
+			return;
+		}
+		
+		DepositService service = MoneyClient.getDepositService();
+		DepositEntity entity = new DepositEntity();
+		entity.setAdUin(adUin);
+		entity.setType(type);
+		entity.setMode(mode);
+		entity.setMoney(money);
+		resp = service.save(entity);
+		
+		JsonUtil.MAPPER.writeValue(out, resp);
+	}
+
+}

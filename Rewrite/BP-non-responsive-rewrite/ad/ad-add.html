@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>永辉竞价投放系统 - 广告新增</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="renderer" content="webkit">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="keywords" content="keywords" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../assets/js/ie-emulation-modes-warning.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <link media="all" href="../css/ie8.css" rel="stylesheet">
+    <![endif]-->
+    <!-- Bootstrap core CSS -->
+    <link href="../extend/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--extend css-->
+    <link rel="stylesheet" href="../extend/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../extend/layui/css/layui.css">
+    <!-- Custom styles for this template -->
+    <link href="../css/non-responsive.css" rel="stylesheet">
+    <!-- Custom styles for this system -->
+    <link href="../css/bp-global.css" rel="stylesheet">
+    <link href="../css/bp-ad.css" rel="stylesheet">
+    <link href="../css/bp-responsive.css" rel="stylesheet">
+    <link href="../css/bp-open-window.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- The mobile navbar-toggle button can be safely removed since you do not need it in a non-responsive implementation -->
+                <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" /></a>
+            </div>
+            <!-- Note that the .navbar-collapse and .collapse classes have been removed from the #navbar -->
+            <div id="navbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">竞拍</a></li>
+                    <li><a href="plan.html">推广计划管理</a></li>
+                    <li><a href="plan-management.html">推广组管理</a></li>
+                    <li class="dropdown active">
+                        <a href="ad-management.html" class="dropdown-toggle" data-toggle="dropdown">广告管理 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <!-- <ul class="dropdown-menu" role="menu"> -->
+                            <li><a href="ad-management.html">广告绑定</a></li>
+                            <li class="active"><a href="ad-add.html">新增广告</a></li>
+                            <li><a href="ad-list.html">广告列表</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown account-nav">
+                        <a href="account.html" class="dropdown-toggle" data-toggle="dropdown">账户中心 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <!-- <ul class="dropdown-menu" role="menu"> -->
+                            <li><a href="account.html">在线充值</a></li>
+                            <li><a href="../ader/account-recharge.html">充值记录</a></li>
+                            <li><a href="../invoice/account-consume.html">消费记录——开发票</a></li>
+                            <li><a href="../invoice/account-invoice-status.html">发票状态</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../report/data-report.html">数据报表</a></li>
+                    <li><a href="../logs/log.html">操作日志</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown account-nav">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../img/id.jpg" /></a>
+                        <ul class="dropdown-menu">
+                            <!-- <ul class="dropdown-menu" role="menu"> -->
+                            <li><a href=" ">退出系统</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <!-- navbar end -->
+    <!--header-->
+    <header>
+        <div class="container">
+            <h2>广告新增</h2>
+        </div>
+    </header>
+    <!--header end-->
+    <!--section-->
+    <section class="ad">
+        <div class="container">
+            <!-- form-horizontal start -->
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" style="font-size: 16px; font-weight: bold;">设置广告信息：</label>
+                    <div class="col-xs-4"> </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">广告归类：</label>
+                    <div class="col-xs-4 layui-form">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="layui-input-inline">
+                                    <select lay-filter="plans" name="plans" id="plans">
+                                        <option value="">选择推广计划</option>
+                                        <option value="1">test</option>
+                                        <option value="2">test</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="layui-input-inline">
+                                    <select name="groups" id="groups">
+                                        <option value="">选择推广组</option>
+                                        <option value="1">test</option>
+                                        <option value="2">test</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">广告标题：</label>
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control" id="title" placeholder="请输入广告标题">
+                        <input type="hidden" id="adId" name="adId">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">广告类型：</label>
+                    <div class="col-xs-4 layui-form">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="layui-input-inline">
+                                    <select lay-filter="adTypes" name="adTypes" id="adTypes">
+                                        <option value="">选择广告类型</option>
+                                        <option value="1">test</option>
+                                        <option value="2">test</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">广告规格：</label>
+                    <div class="col-xs-4 layui-form">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="layui-input-inline">
+                                    <select name="adSizes" id="adSizes">
+                                        <option value="">选择广告规格</option>
+                                        <option value="1">test</option>
+                                        <option value="2">test</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" id="imgDiv">
+                    <label class="col-xs-2 control-label">上传广告图片：</label>
+                    <div class="col-xs-4">
+                        <input name="imgAd" id="imgAd" class="layui-upload-file" lay-title="点击上传小于2M,宽900px，高500px的png/jpg格式图片" type="file">
+                        <input type="hidden" id="imgKey" name="imgKey">
+                    </div>
+                </div>
+                <div class="form-group" id="imgDiv">
+                    <label class="col-xs-2 control-label">上传二维码：</label>
+                    <div class="col-xs-4">
+                        <input name="imgAd" id="imgAd" class="layui-upload-file" lay-title="点击上传小于2M,宽900px，高500px的png/jpg格式图片" type="file">
+                        <input type="hidden" id="imgKey" name="imgKey">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">输入广告文字：</label>
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control" id="content" name="content" placeholder="最多输入10个文字">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">链接地址：</label>
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control" id="link" name="link" placeholder="请输入链接地址">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label"> </label>
+                    <div class="col-xs-4">
+                        <!-- <p id="errMsg"><i class="exclamation-icon"></i></p> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label"> </label>
+                    <div class="col-xs-4 button-box">
+                        <button type="button" id="btnSubmit" class="btn btn-default submit-Review">提交审核</button>
+                        <!-- <button type="button" id="btnBack" class="btn btn-default">返回</button> -->
+                    </div>
+                </div>
+            </div>
+            <!-- form-horizontal start -->
+            <div class="ad-previes">
+                <img id="adImg" src="http://placehold.it/600x800">
+            </div>
+        </div>
+    </section>
+    <!--section end-->
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <p>客服电话：0591-86290888</p>
+            <p>Copyright @2016 永辉超市股份有限公司 All Rights Reserved</p>
+        </div>
+    </footer>
+    <!--footer end-->
+    <!--弹窗 strat-->
+    <!-- submitReview -->
+    <div id="submitReview" class="frame-content" style="display: none;">
+        <div class="frame-body submit-review">
+            <p>广告信息已提交审核
+                <br /> 24小时内可在“广告管理”->“广告列表”页面查看审核结果！
+            </p>
+            <div class="button-box">
+                <button type="button" id="btnKnow" class="btn btn-default">我知道了</button>
+            </div>
+        </div>
+    </div>
+    <!-- submitReview end -->
+    <!--弹窗 end-->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../extend/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <!-- <script src="assets/js/vendor/holder.min.js"></script> -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Extend JavaScript -->
+    <script src="../extend/layui/layui.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="../js/bp-custom.js "></script>
+    <script src="../js/bp-open-window.js"></script>
+    <script src="../js/common.js "></script>
+    <script src="js/ad.js "></script>
+</body>
+
+</html>

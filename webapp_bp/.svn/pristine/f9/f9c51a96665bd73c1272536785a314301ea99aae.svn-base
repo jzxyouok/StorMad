@@ -1,0 +1,28 @@
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /*data start*/
+ 
+ .data .table> tbody> tr> td.chart-Preview {
+     padding: 20px;
+     height: 400px;
+ }
+ 
+ .data .table> tbody> tr> td.chart-Preview> p {}
+ 
+ .data .table> tbody> tr> td.chart-Preview> canvas {
+     display: block;
+     border: 4px solid #e6614f;
+     padding: 15px;
+ }
+ 
+ .data .table-responsive {
+     border-top: 1px solid #d5d5d5;
+ }
+ 
+ .data table> tbody> tr> td> .btn-default {
+     width: auto;
+     height: 36px;
+ }
+ /*data end*/
+ /* --------------------------------------------------
+-------------------------------------------------- */

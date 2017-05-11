@@ -1,0 +1,52 @@
+package com.yonghui.webapp.bp.resp.invoice;
+
+import java.io.Serializable;
+
+import com.yonghui.comp.money.share.bean.BalanceEntity;
+
+public class BalanceVo extends BalanceEntity implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7321072142572695211L;
+	
+	public static BalanceVo wrapper(BalanceEntity entity, String bpName, String industryName, String invoiceStatusCN) {
+		BalanceVo vo = new BalanceVo();
+		entity.copy(vo);
+		vo.setBpName(bpName);
+		vo.setIndustryName(industryName);
+		vo.setInvoiceStatusCN(invoiceStatusCN);
+
+		return vo;
+	}
+	
+	private String bpName;
+	
+	private String industryName;
+	
+	private String invoiceStatusCN;
+
+	public String getBpName() {
+		return bpName;
+	}
+
+	public void setBpName(String bpName) {
+		this.bpName = bpName;
+	}
+
+	public String getIndustryName() {
+		return industryName;
+	}
+
+	public void setIndustryName(String industryName) {
+		this.industryName = industryName;
+	}
+
+	public String getInvoiceStatusCN() {
+		return invoiceStatusCN;
+	}
+
+	public void setInvoiceStatusCN(String invoiceStatusCN) {
+		this.invoiceStatusCN = invoiceStatusCN;
+	}
+}

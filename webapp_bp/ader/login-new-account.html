@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>永辉竞价投放系统 - 申请开户</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <meta name="renderer" content="webkit">
+    <!-- The above 2 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Note there is no responsive meta tag here -->
+    <link rel="icon" href="../img/favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="../extend/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../assets/js/ie-emulation-modes-warning.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <link media="all" href="css/ie8.css" rel="stylesheet">
+    <![endif]-->
+    <!-- extend css -->
+    <link rel="stylesheet" href="../extend/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../extend/layui/css/layui.css">
+    <!-- Custom styles for this template -->
+    <!-- <link href="../css/non-responsive.css" rel="stylesheet"> -->
+    <!-- Custom css -->
+    <link href="../css/bp-global.css" rel="stylesheet">
+    <link href="../css/bp-login-global.css" rel="stylesheet">
+    <link href="../css/bp-new-account.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- wrapper-inner -->
+        <div class="wrapper-inner">
+            <!--new-account-->
+            <div class="login-container new-account">
+                <div class="return">
+                    <button type="button" id="btnBack" name="btnBack" class="btn btn-default">返回</button>
+                </div>
+                <div class="login">
+                    <div class="logo">
+                        <img src="../img/logo_login.png" />
+                    </div>
+                    <h2>申请开户</h2>
+                </div>
+                <form class="form-horizontal layui-form layui-form-pane" id="aderForm" role="form">
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">企业全称：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="corporation" id="corporation" placeholder="请输入企业全称">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group layui-form-item">
+                        <label class="col-xs-3 control-label">企业地址：</label>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="layui-input-inline">
+                                        <select name="province" id="province" lay-filter="province">
+                                            <option value="">请选择省</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="layui-input-inline city-wrap">
+                                        <select name="city" id="city" lay-filter="city">
+                                            <option value="">请选择市</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="layui-input-inline district-wrap">
+                                        <select name="district" id="district" lay-filter="district">
+                                            <option value="">请选择县/区</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-xs-offset-3">
+                            <input type="text" class="form-control" name="address" id="address" placeholder="街道/小区">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">法人姓名：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="legalPerson" id="legalPerson" placeholder="请输入法人姓名">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">法人身份证：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="legalIdcard" id="legalIdcard" placeholder="请输入法人身份证">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="exclamation-icon" aria-hidden="true"></i>身份证格式错误 -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">开户银行：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="bank" id="bank" placeholder="请输入开户银行">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">银行开户帐号：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="accountName" id="accountName" placeholder="请输入银行开户帐号">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">银行卡帐号：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="cardNo" id="cardNo" placeholder="请输入银行卡帐号">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">登录用户名：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="loginName" id="loginName" placeholder="请输入登录用户名 ">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">登录密码：</label>
+                        <div class="col-xs-6">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="请输入登录密码">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="exclamation-icon" aria-hidden="true"></i>密码强度不够 -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">联系人姓名：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="contact" id="contact" placeholder="请输入联系人姓名">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">联系人邮箱：</label>
+                        <div class="col-xs-6">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="请输入联系人邮箱，将用于找回密码">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">联系人手机号：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入联系人手机号，用于绑定账号，找回密码">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">短信验证码：</label>
+                        <div class="col-xs-6 verification">
+                            <!--<input type="number" class="form-control" id="" placeholder="短信验证码">-->
+                            <div class="row">
+                                <div class="col-xs-7">
+                                    <input type="text" class="form-control" name="vCode" id="vcode" placeholder="请输入6位短信验证码">
+                                </div>
+                                <div class="col-xs-5">
+                                    <button type="button" name="btnVCode" id="btnVCode" class="btn btn-default">获取验证码</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">组织机构代码证号：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="orgCode" id="orgCode" placeholder="请输入组织机构代码证号">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">工商注册号：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="busiRegNo" id="busiRegNo" placeholder="请输入工商注册号">
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">品牌logo：</label>
+                        <div class="col-xs-6">
+                            <div class="upload">
+                                <img id="logo" /> 点击上传文件大小不大于2MB的PNG/JPG格式图片
+                                <div class="upbar">
+                                    <input name="file" class="layui-upload-file" id="logoUrl" name="logoUrl" type="file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">营业执照/税务登记证：</label>
+                        <div class="col-xs-6">
+                            <div class="upload">
+                                <img id="busiLicense" /> 点击上传文件大小不大于2MB的PNG/JPG格式图片
+                                <div class="upbar">
+                                    <input name="file" class="layui-upload-file" id="busiLicenseUrl" name="busiLicenseUrl" type="file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">一般纳税人资格认定资料：</label>
+                        <div class="col-xs-6">
+                            <div class="upload">
+                                <img id="taxCertify" /> 点击上传文件大小不大于2MB的PNG/JPG格式图片
+                                <div class="upbar">
+                                    <input name="file" class="layui-upload-file" id="taxCertifyUrl" name="taxCertifyUrl" type="file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3">
+                            <p class="tips">
+                                <!-- <i class="fa fa-exclamation" aria-hidden="true"></i>Tips -->
+                            </p>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal account-bottom" role="form">
+                    <div class="form-group agreement">
+                        <div class="col-xs-6 col-xs-offset-3 checkbox-main">
+                            <label>
+                                <span class="checkbox"><input name="" id="" type="checkbox" checked><i></i> </span> 已阅读并同意<a href="#" data-toggle="modal" data-target="#agreement">《永辉超市广告在线竞拍服务协议条款》</a></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-6 col-xs-offset-3 button-box">
+                            <button type="button" class="btn btn-default" name="btnSubmit" id="btnSubmit">提交</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p class="col-xs-6 col-xs-offset-3 worktime">
+                            友情提示：预计24小时内完成审核
+                            <br /> 审核工作时间：周一至周日9:00-22:00（法定节日顺延）
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <!--new-account end-->
+            <!--footer-->
+            <footer>
+                <p>客服电话：0591-86290888
+                    <br> Copyright @2016
+                    <a href="#">永辉超市股份有限公司</a> All Rights Reserved.</p>
+            </footer>
+            <!--footer-->
+        </div>
+        <!-- /.wrapper-inner -->
+    </div>
+    <!-- /.wrapper -->
+    <!-- 广告协议 -->
+    <div class="modal fade bs-example-modal-lg" id="agreement">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">《永辉超市广告在线竞拍服务协议条款》</h4>
+                </div>
+                <div class="modal-body">
+                    <h2>用户协议</h2>
+                    <br />
+                    <span>版本号：2016年第1版</span><span class="pull-right">最新修订日期：2016年11月30日</span>
+                    <br /> &nbsp; &nbsp; &nbsp; &nbsp;【永辉数字化营销平台】所提供的各项服务所有权和运作权均为永辉超市股份有限公司（以下简称“永辉”）所有。【永辉数字化营销平台】用户使用协议（以下简称“本协议”）系由本平台用户与永辉就【永辉数字化营销平台】的各项服务所订立的相关权利义务规范。在接受本协议之前，请您仔细阅读本协议的全部内容（特别是以粗体标注的内容）。<strong>使用本服务前，您须阅读并完全同意本协议。一旦您点击确认本协议或实际使用服务，均表示您已同意受本协议约束；如果您不同意接受本协议全部条款和条件，那您将无权使用该服务。请在申请和使用服务之前认真阅读本协议全部内容，对于本协议中加粗或以下划线字体提示的内容，永辉超市督促您应重点阅读。届时您不应以未阅读本协议的内容或者未获得【永辉数字化营销平台】对您问询的解答等理由，主张本协议无效，或要求撤销本协议。</strong>
+                    <br />
+                    <br />
+                    <h3>永辉有权对本协议条款进行修改，修改后的协议一旦公布即有效代替原来的协议。</h3>
+                    <br />
+                    <h3>第一条  协议订立、生效及其适用范围</h3>
+                    <ol>
+                        <li>1.1 您通过网络页面点击确认本协议或以勾选等其他方式选择接受本协议，包括但不限于未确认本协议而使用了本平台的服务功能，均表示您与【永辉数字化营销平台】已就本协议达成一致并同意接受本协议的全部约定内容。</li>
+                        <li>1.2 本协议自您确认本协议之时即生效。</li>
+                        <li>1.3 本协议包括本协议正文以及所有【永辉数字化营销平台】已经发布的或将来可能发布的关于商户服务的各类规则、规范、公告和（或）通知等（以下合称“规则”）。所有规则为本协议不可分割的组成部分，与协议正文具有同等法律效力。</li>
+                        <li>1.4 【永辉数字化营销平台】可按自身判断随时对本协议进行修改及更新。对本协议的所有改动一经发布即产生法律效力，并适用于改动发布后对本网站的一切访问和使用行为。如用户在修改后的本协议发布后继续使用本用户服务的，即代表用户接受并同意了这些改动。</li>
+                        <li>1.5 <strong>如本协议发生变更，本平台会通过公告的方式提前予以公布，变更后的协议在公告期届满起生效。若您在协议生效后继续使用本平台服务的，表示您接受变更后的协议，也将遵循变更后的协议使用本平台服务。</strong></li>
+                        <li>1.6 您了解并同意，根据您实施的不同行为，您将受到本协议不同条款的约束。</li>
+                    </ol>
+                    <h3>第二条  服务的内容及功能</h3>
+                    <ol>
+                        <li>2.1 本平台服务概述：供应商可利用本平台向永辉超市用户发起电子/实体营销券等营销行为，在经【永辉数字化营销平台】成功竞拍广告后，永辉超市利用本平台渠道及自身渠道向最终消费者发放电子/实体营销券等品牌广告，消费者在其电子移动终端（如：智能手机、平板电脑等）上浏览品牌广告、领取电子/实体营销券，在永辉超市收银处核销。</li>
+                        <li>2.2 供应商营销活动由永辉超市基于本平台，予以组织和实施。【永辉数字化营销平台】可吸引永辉超市门店员工和品牌促销员积极参与营销活动；营销活动实时动态和事后的数据分析可通过本平台获得。</li>
+                        <li>2.3 当供应商按照注册页面提示填写信息、阅读并同意本协议且完成全部注册程序后，即可成为本平台用户。</li>
+                    </ol>
+                    <h3>第三条    用户信息</h3>
+                    <ol>
+                        <li>3.1 用户应自行诚信向本平台提供开户资料，用户同意：</li>
+                        <li>3.3.1 用户已具备中华人民共和国法律规定的与用户行为相适应的民事行为能力；</li>
+                        <li>3.3.2 提供合法、真实、准确、详尽的个人资料；</li>
+                        <li>3.3.3 用户信息如有变动，需及时联系客服、更新用户资料。如果用户提供的开户资料不合法、不真实、不准确、不详尽的，用户需承担因此引起的相应责任及后果，并且永辉保留终止用户使用本平台各项服务的权利。</li>
+                        <li>3.2 用户必须自行准备如下设备和承担如下开支：（1）上网设备，包括并不限于电脑或者其他上网终端、调制解调器及其他必备的上网装置；（2）上网开支，包括并不限于网络接入费、上网设备租用费、手机流量费等。</li>
+                        <li>3.3 用户开户成功后，将产生用户名和密码等账户信息，您可以联系客服更改您的密码。您应谨慎合理保存、使用您的账户信息。您若发现任何非法使用您的账户或其他存在安全漏洞的情况的，请立即通知本平台向客服申请挂失。若客服人员要求贵司提供书面证明材料才能进行下一步挂失操作的，用户应及时提交书面证明材料。</li>
+                        <li>3.4 您同意，永辉拥有通过短信、电话、网站通知或声明等形式，向在平台注册的用户发送竞拍信息、余额变动、售后服务、客户服务、审核结果等告知信息的权利。如您不希望接收上述信息，可退订。</li>
+                        <li>3.5 用户承诺：其通过用户中心发布、编辑、更新的用户信息（包括但不限于文字、图片等）真实准确，并且不侵犯任何人的合法权益；用户接受除基础服务之外的增值服务、推广技术服务时，严格遵守相关服务协议的相关约定；</li>
+                        <li>3.6 供应商承诺：<strong style="color: red;">您应当确保对您在本平台上发起营销活动所涉及的商品及品牌享有相应的权利；商品应当符合国家相关法律法规的要求。您在本平台中的一切操作均应符合国家法律法规、规章政策和法令的规定，还应符合本协议条款和相关规则的规定。</strong></li>
+                        <li>3.7 用户不得将在本平台开户获得的账号、密码等账户信息提供给他人使用，否则您应承担由此产生的全部责任，并与实际使用人承担连带责任。您同意，永辉有权使用用户的开户信息、用户名、密码等信息，登陆进入用户注册账户，进行证据保全，包括但不限于公证、见证、协助司法机关进行调查取证等。</li>
+                        <li>3.8 永辉超市有权要求您提供资料证明信息或行为的合法性，如您未能提交资料或提交的资料未能充分证明您的主张，相关不利后果由您自行承担。</li>
+                    </ol>
+                    <h3>第四条    用户依法言行义务</h3>
+                    <ol>
+                        <li>本协议依据国家相关法律法规规章制定，您同意严格遵守以下义务：</li>
+                        <li>4.1 不得传输或发表：煽动抗拒、破坏宪法和法律、行政法规实施的言论，煽动颠覆国家政权，推翻社会主义制度的言论，煽动分裂国家、破坏国家统一的言论，煽动民族仇恨、民族歧视、破坏民族团结的言论以及不能有涉及黄色、暴力、反动等内容）；</li>
+                        <li>4.2 从中国大陆向境外传输资料信息时必须符合中国有关法律法规；</li>
+                        <li>4.3 不得利用本平台从事洗钱、窃取商业秘密、窃取个人信息等违法犯罪活动；</li>
+                        <li>4.4 不得干扰本平台的正常运转，不得侵入本平台及国家计算机信息系统；</li>
+                        <li>4.5 不得传输或发表任何违法犯罪的、骚扰性的、中伤他人的、辱骂性的、恐吓性的、伤害性的、庸俗的，淫秽的、不文明的等信息资料；</li>
+                        <li>4.6 不得传输或发表损害国家社会公共利益和涉及国家安全的信息资料或言论；</li>
+                        <li>4.7 不得教唆他人从事本条所禁止的行为；</li>
+                        <li>4.8 除本注册协议、其他条款或另有其他约定外，您不得利用在本平台注册的账户进行经营活动、牟利行为及其他未经本平台许可的行为，包括但不限于以下行为：</li>
+                        <li>4.8.1 恶意利用技术手段或其他方式，为获取利益而注册账户、竞拍等行为，影响其他用户正常消费行为或相关合法权益、影响永辉正常销售秩序的行为；</li>
+                        <li><strong style="color: red;">4.8.2 以再销售或商业使用为目的对本平台服务进行购买的（与永辉另有合同约定的除外）；</strong></li>
+                        <li>4.8.3 商品或服务的供应商所供商品进行回购的行为；</li>
+                        <li>4.8.4 任何对商品目录、说明、价格、数量、其他用户信息或其他内容的下载、转载、收集、衍生利用、复制、出售、转售或其他形式的使用，无论是否通过Robots、Spiders、自动仪器或手工操作；</li>
+                        <li>4.8.5 本平台相关规则、政策、或网页活动规则中限制、禁止的行为；</li>
+                        <li>4.8.6 其他影响永辉对用户账户正常管理秩序的行为。</li>
+                        <li>4.9 您不得利用任何非法手段获取其他用户个人信息，不得将其他用户信息用于任何营利或非营利目的，不得泄露其他用户或权利人的个人隐私，否则永辉有权采取本协议规定的合理措施制止您的上述行为，情节严重的，将提交公安机关进行刑事立案。</li>
+                        <li>4.10 您不得发布任何侵犯他人著作权、商标权等知识产权或其他合法权利的内容；如果有其他用户或权利人发现您发布的信息涉嫌知识产权、或其他合法权益争议的，这些用户或权利人有权要求永辉删除您发布的信息，或者采取其他必要措施予以制止，永辉将会依法采取这些措施。</li>
+                        <li>4.11 您应不时关注并遵守本平台不时公布或修改的各类规则规定。本平台保有删除站内各类不符合法律政策或不真实的信息内容而无须通知您的权利。</li>
+                        <li>4.12 若您未遵守以上规定的，本平台有权做出独立判断并采取暂停或关闭您的账号、冻结账号、账户内余额及关闭相应交易订单等措施。您须对自己在网上的言论和行为承担法律责任。</li>
+                    </ol>
+                    <h3>第五条  永辉的权利及责任限制</h3>
+                    <ol>
+                        <li>5.1 永辉负责本平台的建设、运行和管理，并确保本平台的安全性，并不断提高服务的产品与技术质量、优质的用户体验以及系统的安全稳定；</li>
+                        <li>5.2 若用户利用本平台从事不符合本协议约定或相关规则或国家法律法规、规章、政策、法令规定的活动，永辉公司有权暂停或终止提供本平台部分或所有服务，给永辉或其它用户造成损失，违规用户须赔偿所有损失。</li>
+                        <li>5.3 用户使用本平台，<strong>即视为用户授权永辉收集并合理使用用户在使用本平台过程中产生的任何信息和数据，包括但不限于用户的身份信息、账户信息和营销活动信息等，永辉有权对前述信息进行合理利用，以更好地提供产品和服务。</strong>对用户事先以书面方式正式向永辉公司声明为机密的信息，除非永辉已采取有效脱敏措施，否则永辉不得向第三方透露。</li>
+                        <li>5.4 永辉作为用户服务的技术服务提供商将按“现状”和按“可得到”的状态提供服务。本平台在此明确声明对用户服务不作任何明示或暗示的保证，包括但不限于对该服务的可适用性、没有错误或疏漏、持续性、准确性、可靠性、适用于某一特定用途之类的保证、声明或承诺。</li>
+                        <li>5.5 在所适用的法律允许的范围内，本平台不做任何明示的或默示的声明，也不给予任何明示的或默示的保证或条件，包括但不限于：</li>
+                        <li>5.5.1关于适用性、特定用途适用性、准确性和无侵权行为的任何保证或条件；</li>
+                        <li>5.5.2在服务使用过程或行业惯例中产生的任何保证或条件；</li>
+                        <li>5.5.3在访问或使用用户服务时不受干扰、没有错误的任何保证或条件；</li>
+                        <li>5.5.4永辉超市不对您使用服务后的曝光量、产品销量、经营业绩、投资收益等作任何明示或暗示的承诺。</li>
+                        <li>5.6 在任何情况下，本平台均不对源于、基于或因本协议或使用用户服务而导致的数据丢失和/或任何损害赔偿负责，包括但不限于直接的、间接的、特殊的、附带性的或惩罚性的损害赔偿或其他任何形式的损害赔偿，即使本平台已被告知此等损害赔偿的可能性。</li>
+                        <li>5.7 本平台对用户的任何通知，不论是口头还是书面的，均不表示本平台做出在本协议陈述以外的任何担保责任。</li>
+                        <li><strong>5.8 永辉超市有权随时删除涉嫌任何危害国家安全、淫秽色情、虚假、诽谤（包括商业诽谤）、非法恐吓或非法骚扰、有损他人名誉、利益、侵权等违法或有违公序良俗的信息或网络内容的供应信息。如果用户的如上供应信息因为以上原因被永辉超市删除，本服务终止，用户已充值的服务费用将不予退还。</strong></li>
+                        <li>5.9 对下列情形，本平台不承担任何责任：</li>
+                        <li>5.9.1 并非本平台的故意或过失而导致软件无法使用。</li>
+                        <li>5.9.2 由于商户或第三人的故意或过失导致其及/或任何第三方遭受损失。</li>
+                        <li>5.9.3 因本平台网合理控制范围以外的原因，包括但不限于不可抗力、政府行为和电力电信中断等，导致本平台未能履行或未能完全履行本合同的。</li>
+                        <li>5.10 本平台保留随时修改或中断服务而不需通知商户的权利，不需对用户或任何无直接关系的第三方负责。</li>
+                        <li>5.11 如用户<strong style="color: red;">违反本协议第四条约定的承诺及保证，本平台有权采取一切必要的措施，包括但不限于：删除商户发布的内容、暂停或查封商户帐号，取消因违规所获利益，终止本服务协议，乃至通过诉讼形式追究商户法律责任等。</strong></li>
+                    </ol>
+                    <h3>第六条    费用及付款</h3>
+                    <ol>
+                        <li>6.1 本服务按服务时段收费，与产品信息点击或展示次数无关。</li>
+                        <li>6.2 永辉可对竞拍内容设置竞拍底价，由供应商对竞拍内容进行竞价，具体以永辉超市公布的政策为准。</li>
+                        <li>6.3 申请本服务前，您应确保您的【永辉数字化营销平台】充值消耗账户（以下简称“消耗账户”）中有足够金额。一旦您根据服务购买规则提交了有效申请，永辉超市将从您消耗账户中暂时冻结相应竞拍金额，待成功竞拍后一次性扣除相应服务期之费用，如消耗账户中余额不足，视为您未提交申请。</li>
+                        <li>6.4 永辉超市有权根据服务发展等需要调整本服务的价格设定方式、收费标准及费用支付方式，相关调整将提前以网站公示等方式通知您并于通知指定之日起生效。</li>
+                    </ol>
+                    <h3>第七条    知识产权及其它权利</h3>
+                    <ol>
+                        <li>7.1 任何用户接受本协议，即表明该用户主动将其在任何时间段在本平台发表的任何形式的信息的著作财产权，包括并不限于：复制权、发行权、出租权、展览权、表演权、放映权、广播权、信息网络传播权、摄制权、改编权、翻译权、汇编权等，以及应当由著作权人享有的其他可转让权利无偿独家转让给本平台运营商所有，同时表明该用户许可本平台有权利就任何主体侵权而单独提起诉讼，并获得全部赔偿。 本协议已经构成《著作权法》第二十五条所规定的书面协议，其效力及于用户在本平台发布的任何受著作权法保护的作品内容，无论该内容形成于本协议签订前还是本协议签订后。</li>
+                        <li>7.2 本平台拥有此网站内容及资源的版权,受国家知识产权保护,享有对本本平各种协议、声明的修改权；未经本平台的明确书面许可，任何第三方不得为任何非私人或商业目的获取或使用本网站的任何部分或通过本网站可直接或间接获得的任何内容、服务或资料。任何第三方违反本协议的规定以任何方式，和/或以任何文字对本网站的任何部分进行发表、复制、转载、更改、引用、链接、下载或以其他方式进行使用，或向任何其他第三方提供获取本网站任何内容的渠道，则对本网站的使用权将立即终止，且任何第三方必须按照本平台的要求，归还或销毁使用本网站任何部分的内容所创建的资料的任何副本。</li>
+                        <li>7.3 本平台未向任何第三方转让本网站或其中的任何内容所相关的任何权益或所有权，且一切未明确向任何第三方授予的权利均归本平台所有。未经本协议明确允许而擅自使用本网站任何内容、服务或资料的，构成对本协议的违约行为，且可能触犯著作权、商标、专利和/或其他方面的法律法规，本平台保留对任何违反本协议规定的第三方（包括单位或个人等）提起法律诉讼的权利。</li>
+                    </ol>
+                    <h3>第八条    适用法律与争议解决</h3>
+                    <ol>
+                        <li>8.1 因用户使用本平台用户服务而引起或与之相关的一切争议均应依照中华人民共和国法律予以处理，并以本平台所在地人民法院为第一审管辖法院。</li>
+                        <li>8.2 如本协议的任何条款被视作无效或无法执行，则上述条款可被分离，其余部份则仍具有法律效力。</li>
+                        <li>8.3 本平台于用户过失或违约时放弃本协议规定的权利的，不得视为其对用户的其他或以后同过失或违约行为弃权。</li>
+                    </ol>
+                    <h3>第九条    其他</h3>
+                    <ol>
+                        <li>联系方式——客服电话：0591-86290888</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--弹窗 strat-->
+    <!-- login-container start -->
+    <div class="login-container status-box" id="notPass" style="display:none;">
+        <div class="login">
+            <div class="logo">
+                <img src="../img/logo_login.png" />
+            </div>
+            <h2>开户信息审核不通过(╯﹏╰)</h2>
+        </div>
+        <div class="tips-box">
+            <p><span>原因：</span><span class="reason"></span> </p>
+        </div>
+        <div class="button-box">
+            <button type="submit" class="btn btn-default">马上修改信息</button>
+        </div>
+    </div>
+    <!-- login-container end -->
+    <!--弹窗 end-->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../extend/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <!-- <script src="../assets/js/vendor/holder.min.js"></script> -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Extend JavaScript -->
+    <script src="../extend/layui/layui.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="../js/bp-custom.js "></script>
+    <script src="../js/bp-open-window.js"></script>
+    <script src="../js/common.js "></script>
+    <script src="js/idcard.js"></script>
+    <script src="js/login-new-account.js"></script>
+</body>
+
+</html>

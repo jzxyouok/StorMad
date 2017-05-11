@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="keywords" />
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="img/favicon.ico">
+
+		<title>永辉竞价投放系统 - 竞拍首页</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="extend/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+		<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+		<script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+		<!-- extend css -->
+		<link rel="stylesheet" href="extend/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="extend/layui/css/layui.css">
+		<!--<link href="extend/bootstrap-switch/css/bootstrap-switch.css" rel="stylesheet">-->
+
+		<!-- Custom styles for this template -->
+		<link href="css/global.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/open-window.css" rel="stylesheet">
+		<link href="css/checkbox.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<!-- navbar -->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">永辉竞价</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+					<a class="navbar-brand" href="index.html"><img src="img/logo.png" /></a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="index.html">竞拍</a>
+						</li>
+						<li>
+							<a href="ad/plan.html">推广计划管理</a>
+						</li>
+						<li>
+							<a href="ad/plan-management.html">推广组管理</a>
+						</li>
+						<li class="dropdown">
+							<a href="ad/ad-management.html" class="dropdown-toggle" data-toggle="dropdown">广告管理 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="ad/ad-management.html">广告绑定</a>
+								</li>
+								<li>
+									<a href="ad/ad-add.html">新增广告</a>
+								</li>
+								<li>
+									<a href="ad/ad-list.html">广告列表</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown account-nav">
+							<a href="ad/account.html" class="dropdown-toggle" data-toggle="dropdown">账户中心 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="ad/account.html">在线充值</a>
+								</li>
+								<li>
+									<a href="ader/account-recharge.html">充值记录</a>
+								</li>
+								<li>
+									<a href="invoice/account-consume.html">消费记录——开发票</a>
+								</li>
+								<li>
+									<a href="invoice/account-invoice-status.html">发票状态</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="report/data-report.html">数据报表</a>
+						</li>
+						<li>
+							<a href="logs/log.html">操作日志</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/id.jpg" /></a>
+							<ul class="dropdown-menu" role="menu">
+								<li class="active">
+									<a href="#">账户管理</a>
+								</li>
+								<li>
+									<a href="#">退出系统</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+			<div class="left-bg"></div>
+		</nav>
+		<!-- navbar end -->
+
+		<!--header-->
+		<header>
+			<div class="container">
+				<h2>竞拍</h2>
+				<p>（ 本期竞拍时间：<span>2016-10-06 10:00:00</span> <span>至</span> <span>2016-10-22 10:00:00</span> ，结束倒计时：<span>1天2小时3分钟23秒</span> )</p>
+
+				<div class="pull-right">
+
+					<!--<h3>竞拍实时提醒：</h3>-->
+					<!--<div class="switch demo1">
+						<input type="checkbox" checked="checked">
+						<label><i></i></label>
+					</div>-->
+
+					<div class="layui-form layui-form-item">
+						<label class="layui-form-label">竞拍实时提醒：</label>
+						<div class="layui-input-inline">
+							<input checked="" name="open" lay-skin="switch" lay-filter="switchTest" title="开关" type="checkbox">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="remind-window hide">
+					<div class="remind-box">
+						<p>开启后系统将向您的联系人手机号<span>********5218</span>发送竞拍实时提醒。</p>
+						<p class="remind-content">提醒内容：竞拍开始及结束时间、竞拍结果；<br /> 提醒时间：竞拍开始、结束前1小时左右；
+							<br /> 结果实时.
+						</p>
+						<button type="button" class="btn btn-default">竞拍</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--header end-->
+
+		<!--section-->
+		<section class="auction">
+			<div class="container">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active">
+						<a href="#choice" role="tab" data-toggle="tab"><i class="auction-icon-01"></i>选择档期</a>
+					</li>
+					<li role="presentation">
+						<a href="#offer" role="tab" data-toggle="tab"><i class="auction-icon-02"></i>出价竞拍</a>
+					</li>
+					<li role="presentation">
+						<a href="#result" role="tab" data-toggle="tab"><i class="auction-icon-03"></i>竞拍结果</a>
+					</li>
+				</ul>
+				<!-- Nav tabs end -->
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<!--tabpanel 01-->
+					<div role="tabpanel" class="tab-pane active" id="choice">
+						<div class="search-box">
+							<form action="#">
+								<label>按投放行业查询：</label>
+								<input class="form-control" autocomplete="on" placeholder="输入行业关键词，回车跳转" type="text">
+							</form>
+						</div>
+
+						<div class="table-responsive">
+							<table class="table table-hover table-check">
+								<thead>
+									<tr>
+										<th>选择</th>
+										<th>档期</th>
+										<th>投放时间</th>
+										<th>广告位置</th>
+										<th>投放区域</th>
+										<th>计费方式</th>
+										<th>起拍价格</th>
+										<th>状态</th>
+									</tr>
+								</thead>
+								<tbody id="check_list">
+									<tr>
+										<td>
+											<!--<div class="checkbox">
+												<label>
+									<span class="checkbox"><input name="" id="" type="checkbox"><i></i> </span> </label>
+											</div>-->
+											<div class="check-box">
+												<span class="checked">
+													<i></i>
+											</span>
+											</div>
+										</td>
+										<td>11月档期（上）</td>
+										<td>2016-11-01至2016-11-15</td>
+										<td>
+											<span class="status-tips ad-Preview"><i class="tips-icon"></i><a href="#">支付后页面</a></span>
+										</td>
+										<td>
+											<span class="status-tips store-List"><i class="tips-icon"></i><a href="#">查看门店</a></span>
+										</td>
+										<td>按时段</td>
+										<td>￥250</td>
+										<td>竞拍中</td>
+									</tr>
+									<tr class="extend">
+										<td colspan="8">
+											<div class="row">
+												<div class="col-md-1 choice-title">
+													选择行业：
+												</div>
+												<div class="col-md-8 industry">
+													<!--<button class="active">洗护</button>-->
+													<button>饮料香烟</button>
+													<button>休闲食品</button>
+													<button>干性杂货</button>
+													<button>日配</button>
+													<button>清洁用品</button>
+													<button>家庭用品</button>
+													<button>文体用品</button>
+													<button>家电</button>
+													<button>纺织用品</button>
+													<button>酒品</button>
+													<button>干货</button>
+													<button>水果</button>
+													<button>蔬菜</button>
+													<button>家禽</button>
+													<button>猪肉</button>
+													<button>冰鲜</button>
+													
+													<button>贝类</button>
+													<button>活鲜</button>
+													<button>男正装</button>
+													<button>男休闲</button>
+													<button>女正装</button>
+													<button>女休闲</button>
+													<button>鞋</button>
+													<button>童装</button>
+													<button>内衣</button>
+													<button>皮具</button>
+													
+													<button>熟食</button>
+													<button>包点</button>
+													<button>烘焙</button>
+													<button>铁板</button>
+													<button>果吧</button>
+													<button>鲑鱼</button>
+												</div>
+												<div class="col-md-3 perfunctory">
+													<p><span id="industry-Type">饮料香烟</span>行业竞拍热度：
+														<i class="fa fa-star" aria-hidden="true"></i>
+														<i class="fa fa-star" aria-hidden="true"></i>
+														<i class="fa fa-star" aria-hidden="true"></i>
+														<i class="fa fa-star" aria-hidden="true"></i>
+														<i class="fa fa-star disabled" aria-hidden="true"></i>
+													</p>
+													<button type="button" class="btn btn-default">竞拍</button>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="check-box">
+												<span class="checked">
+													<i></i>
+											</span>
+											</div>
+										</td>
+										<td>11月档期（上）</td>
+										<td>2016-11-01至2016-11-15</td>
+										<td>
+											<span class="status-tips pay-Tips"><i class="tips-icon"></i><a href="#">支付后页面</a></span>
+										</td>
+										<td>
+											<span class="status-tips store-List"><i class="tips-icon"></i><a href="#">查看门店</a></span>
+										</td>
+										<td>按时段</td>
+										<td>￥250</td>
+										<td>竞拍中</td>
+									</tr>
+									<tr class="extend hide">
+										<td colspan="8">
+											<div class="row">
+												<div class="col-md-1 choice-title">
+													选择行业：
+												</div>
+												<div class="col-md-8 industry">
+													<!--<button class="active">洗护</button>-->
+													<button>洗护</button>
+													<button>化妆品</button>
+													<button>女装</button>
+													<button>体育</button>
+													<button>食品</button>
+													<button>国防</button>
+													<button>物流</button>
+													<button>母婴</button>
+													<button>医疗</button>
+													<button>军工</button>
+													<button>母婴</button>
+													<button>医疗</button>
+													<button>军工</button>
+													<button>母婴</button>
+													<button>医疗</button>
+													<button>军工</button>
+												</div>
+												<div class="col-md-3 perfunctory">
+													<p><span id="industry-Type">洗护</span>行业竞拍热度：
+														<i class="fa fa-star" aria-hidden="true"></i>
+														<i class="fa fa-star" aria-hidden="true"></i>
+														<i class="fa fa-star" aria-hidden="true"></i>
+														<i class="fa fa-star" aria-hidden="true"></i>
+														<i class="fa fa-star disabled" aria-hidden="true"></i>
+													</p>
+													<button type="button" class="btn btn-default">竞拍</button>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="after">
+										<td>
+											<div class="check-box">
+												<span class="checked">
+													<i></i>
+											</span>
+											</div>
+										</td>
+										<td>11月档期（上）</td>
+										<td>2016-11-01至2016-11-15</td>
+										<td>
+											<span class="status-tips ad-Preview"><i class="tips-icon"></i><a href="#">支付后页面</a></span>
+										</td>
+										<td>
+											<span class="status-tips result-Tips"><i class="tips-icon"></i><a href="#">查看门店</a></span>
+										</td>
+										<td>按时段</td>
+										<td>￥250</td>
+										<td>竞拍中</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!--tabpanel 01 end-->
+
+					<!--tabpanel 02-->
+					<div role="tabpanel" class="tab-pane" id="offer">
+						<table class="table auction-detail">
+							<tbody>
+								<tr>
+									<td>当前所选档：<span>11月档期（下）</span></td>
+									<td>起拍价格：<span>￥250</span></td>
+								</tr>
+								<tr>
+									<td>投放时间：<span>2016-11-01至2016-11-15</span></td>
+									<td>当前价格：<span>￥750</span></td>
+								</tr>
+								<tr>
+									<td>投放行业：<span>洗护</span></td>
+									<td>加价幅度：<span>￥100</span></td>
+								</tr>
+								<tr>
+									<td>广告位置：<span class="status-tips-right ad-Preview"><i class="tips-icon"></i><a href="#" data-toggle="modal" data-target="#windowAD">支付后页面</a></span></td>
+									<td>我的出价：<span>￥850</span></td>
+								</tr>
+								<tr>
+									<td>投放区域：<span class="status-tips-right store-List"><i class="tips-icon"></i><a href="#" data-toggle="modal" data-target="#windowStore">查看门店</a></span></td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>计费方式：<span>按时段</span></td>
+									<td>起拍价格：<span>￥250</span></td>
+								</tr>
+							</tbody>
+						</table>
+						<p>
+							温馨提示：为了保证拍卖的顺利进行，请确保您的账户余额充足！<span><a href="#">立即充值</a></span>
+						</p>
+
+					</div>
+					<!--tabpanel 02 end-->
+
+					<!--tabpanel 03-->
+					<div role="tabpanel" class="tab-pane" id="result">
+						<div class="table-responsive">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>竞拍时间</th>
+										<th>档期</th>
+										<th>投放时间</th>
+										<th>广告位置</th>
+										<th>投放区域</th>
+										<th>投放行业</th>
+										<th>我的出价</th>
+										<th>状态</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2016-11-01</td>
+										<td>11月档期（上）</td>
+										<td>2016-11-01至2016-11-15</td>
+										<td>
+											<span class="status-tips ad-Preview"><i class="tips-icon"></i><a href="#">支付后页面</a></span>
+										</td>
+										<td>
+											<span class="status-tips store-List"><i class="tips-icon"></i><a href="#">查看门店</a></span>
+										</td>
+										<td>洗护</td>
+										<td>￥250</td>
+										<td>竞拍中</td>
+										<td class="go-on"><button type="button" class="btn btn-default">继续竞拍</button></td>
+									</tr>
+									<tr>
+										<td>2016-11-01</td>
+										<td>11月档期（上）</td>
+										<td>2016-11-01至2016-11-15</td>
+										<td>
+											<span class="status-tips ad-Preview"><i class="tips-icon"></i><a href="#">支付后页面</a></span>
+										</td>
+										<td>
+											<span class="status-tips store-List"><i class="tips-icon"></i><a href="#">查看门店</a></span>
+										</td>
+										<td>洗护</td>
+										<td>￥250</td>
+										<td>竞拍中</td>
+										<td class="locked"><button type="button" class="btn btn-default">广告绑定</button></td>
+									</tr>
+									<tr>
+										<td>2016-11-01</td>
+										<td>11月档期（上）</td>
+										<td>2016-11-01至2016-11-15</td>
+										<td>
+											<span class="status-tips ad-Preview"><i class="tips-icon"></i><a href="#">支付后页面</a></span>
+										</td>
+										<td>
+											<span class="status-tips store-List"><i class="tips-icon"></i><a href="#">查看门店</a></span>
+										</td>
+										<td>洗护</td>
+										<td>￥250</td>
+										<td>竞拍中</td>
+										<td class="over"><button type="button" class="btn btn-default">竞拍已结束</button></td>
+									</tr>
+									<tr>
+										<td>2016-11-01</td>
+										<td>11月档期（上）</td>
+										<td>2016-11-01至2016-11-15</td>
+										<td>
+											<span class="status-tips ad-Preview"><i class="tips-icon"></i><a href="#">支付后页面</a></span>
+										</td>
+										<td>
+											<span class="status-tips store-List"><i class="tips-icon"></i><a href="#">查看门店</a></span>
+										</td>
+										<td>洗护</td>
+										<td>￥250</td>
+										<td>竞拍中</td>
+										<td class="go-on"><button type="button" class="btn btn-default">继续竞拍</button></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<p>温馨提醒：竞拍中若同行出价高于您当前出价，则竞拍失败。 </p>
+					</div>
+					<!--tabpanel 03 end-->
+
+				</div>
+				<!-- Tab panes end -->
+
+			</div>
+
+			<!--tabpanel 02 右侧弹出-->
+			<div id="auction-record" class="auction-record hide">
+				<div class="record-show">
+					<div class="top">
+						<i class="fa fa-angle-left" aria-hidden="true"></i>
+					</div>
+					<p>本期竞拍记录</p>
+				</div>
+				<div class="record-list">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>竞拍时间</th>
+								<th>我的出价</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2016.10.10</td>
+								<td>￥250</td>
+							</tr>
+							<tr>
+								<td>2016.10.10</td>
+								<td>￥250</td>
+							</tr>
+							<tr>
+								<td>2016.10.10</td>
+								<td>￥250</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--tabpanel 02 右侧弹出 end-->
+
+		</section>
+		<!--section end-->
+
+		<!--footer-->
+		<footer id="footFixed">
+			<div class="container">
+				<p>客服电话：0591-86290888</p>
+				<p>Copyright @2016 永辉超市股份有限公司 All Rights Reserved</p>
+			</div>
+		</footer>
+		<!--footer end-->
+
+		<!--弹窗-->
+
+		<!-- adPreview -->
+		<div id="adPreview" class="frame-content" style="display: none;">
+			<div class="frame-body ad-previes">
+				<img src="http://placehold.it/600x600" />
+			</div>
+		</div>
+		<!-- adPreview end -->
+
+		<!-- storeList -->
+		<div id="storeList" class="frame-content" style="display: none;">
+			<div class="frame-body store-list">
+				<h3>该档期投放门店</h3>
+				<ul>
+					<li>福建 厦门市 杏林万科店</li>
+					<li>福建 厦门市 杏林万科店</li>
+					<li>福建 厦门市 杏林万科店</li>
+					<li>福建 厦门市 杏林万科店</li>
+					<li>福建 厦门市 杏林万科店</li>
+				</ul>
+			</div>
+		</div>
+		<!-- storeList end -->
+
+		<!-- payTips -->
+		<div id="payTips" class="frame-content" style="display: none;">
+
+			<div class="frame-body pay-tips-01">
+				<div class="top">
+					<p>竞拍档期：<span>11月档期（下）</span></p>
+					<p>您的出价：<span>￥750</span></p>
+				</div>
+				<p class="read">
+					1、出价成功后，系统将暂时冻结您账户中对应的余额，余额不足则出价失败。<br /> 2、请保持关注，若有同行出价高于您的出价，则系统会即时解冻您被冻结的余额。
+				</p>
+				<div class="bottom">
+					<button type="button" class="btn btn-default">确认出价</button>
+				</div>
+			</div>
+
+			<div class="frame-body pay-tips-02">
+				<div class="top">
+					<p class="warning">出价失败⊙﹏⊙‖∣</p>
+					<p>您当前竞拍价格为本档期该行业最高出价，暂无法出价！</p>
+				</div>
+				<div class="bottom">
+					<button type="button" class="btn btn-default">我知道了</button>
+				</div>
+			</div>
+
+			<div class="frame-body pay-tips-02">
+				<div class="top">
+					<p class="warning">恭喜您出价成功╰(￣▽￣)╮</p>
+					<p>您的出价：<span>￥750</span></p>
+				</div>
+				<div class="bottom">
+					<button type="button" class="btn btn-default">我知道了</button>
+				</div>
+			</div>
+
+			<div class="frame-body pay-tips-02">
+				<div class="top">
+					<p class="warning">很遗憾，由于您余额不足，此次竞拍失败 ⊙﹏⊙‖∣</p>
+					<p>若想继续参与竞拍，请确保您的账户余额充足！<span><a href="#">立即充值</a></span></p>
+				</div>
+				<div class="bottom">
+					<button type="button" class="btn btn-default">我知道了</button>
+				</div>
+			</div>
+
+		</div>
+		<!-- payTips end -->
+
+		<!-- resultTips -->
+		<div id="resultTips" class="frame-content" style="display: none;">
+			<div class="frame-body result-tips">
+				<div class="top">
+					<p class="warning">由于同行出价高于您的出价，此次竞拍失败，<br />金额将立即返回！╮（﹀＿﹀）╭</p>
+					<p>可继续参与竞拍，为确保您的账户余额充足！<span><a href="#">立即充值</a></span></p>
+				</div>
+				<div class="bottom">
+					<button type="button" class="btn btn-default">我知道了</button>
+				</div>
+			</div>
+		</div>
+		<!--resultTips end-->
+
+		<!--弹窗-->
+
+		<!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		<!--<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>-->
+
+		<!-- Layui JavaScript -->
+		<script src="extend/layui/layui.js"></script>
+
+		<!--layer-v2.4 弹层-->
+		<!--<script src="extend/layer/layer.js"></script>-->
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="extend/bootstrap/js/bootstrap.min.js"></script>
+		<!--<script src="extend/bootstrap-switch/js/bootstrap-switch.js"></script>-->
+
+		<!-- JavaScript -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script>
+			window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
+		</script>
+
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+		<!--custom-->
+		<script src="js/custom.js"></script>
+
+		<!--open-window-->
+		<script src="js/open-window.js"></script>
+
+		<!--extend-->
+		<script>
+			var checkList = $("#check_list").find("input[type=checkbox]");
+			checkList.click(function() {
+				if($("#check_list> tr").is(":checked")) {
+					$("tr.extend").removeClass("hide");
+				} else {
+					$("tr.extend").addClass("hide");
+				}
+			})
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,93 @@
+/*checkbox*/
+
+.table-check> thead> tr> th .checkbox label,
+.table-check> tbody> tr> td .checkbox label {
+	padding-left: 0;
+}
+
+.table-check> thead> tr> th .checkbox,
+.table-check> tbody> tr> td .checkbox {
+	margin: 0;
+}
+
+.table-check> thead> tr> th .checkbox span.checkbox,
+.table-check> tbody> tr> td .checkbox span.checkbox {
+	width: 18px;
+	height: 18px;
+	min-height: auto;
+	line-height: 18px;
+	display: inline-block;
+	position: relative;
+	margin-right: 6px;
+	vertical-align: middle;
+	margin-top: 1px;
+}
+
+.table-check> thead> tr> th .checkbox span.checkbox input,
+.table-check> tbody> tr> td .checkbox span.checkbox input {
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	-webkit-opacity: 0;
+	opacity: 0;
+	width: 18px;
+	height: 18px;
+	position: relative;
+	z-index: 9;
+}
+
+.table-check> thead> tr> th .checkbox span.checkbox i,
+.table-check> tbody> tr> td .checkbox span.checkbox i {
+	width: 18px;
+	height: 18px;
+	border: 2px solid #dee0e6;
+	border-radius: 9px;
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.table-check> thead> tr> th .checkbox span.checkbox input:checked+ i,
+.table-check> tbody> tr> td .checkbox span.checkbox input:checked+ i {
+	background-color: #e6614f;
+	border-color: #c74545;
+	border: 2px solid #e6614f;
+}
+
+/*#choice table> tbody> tr> td .checkbox span.checkbox input:checked+ i:after {
+	content: "";
+	width: 6px;
+	height: 4px;
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	border: 2px solid #fff;
+	margin-left: -3px;
+	margin-top: -3px;
+	border-top: 0;
+	border-right: 0;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}*/
+
+.table-check> thead> tr> th .checkbox span.checkbox input:checked+ i:after,
+.table-check> tbody> tr> td .checkbox span.checkbox input:checked+ i:after {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	display: inline-block;
+	position: absolute;
+	border: 4px solid #fff;
+	margin-left: 3px;
+	margin-top: 3px;
+	
+}
+
+
+/*checkbox*/

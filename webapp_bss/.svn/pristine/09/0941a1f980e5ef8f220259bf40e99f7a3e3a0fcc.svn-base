@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="keywords" />
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="img/favicon.ico">
+
+		<title>永辉竞价投放后台系统 - 广告位管理</title>
+
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="../extend/bootstrap/css/bootstrap.min.css">
+
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+		<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+		<script src="../assets/js/ie-emulation-modes-warning.js"></script>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+		<!-- extend css -->
+		<link rel="stylesheet" href="../extend/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="../extend/layui/css/layui.css">
+
+		<!-- Custom styles for this template -->
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../extend/sidebar-menu/sidebar-menu.css" />
+		<link rel="stylesheet" type="text/css" href="../css/global.css" />
+		<link rel="stylesheet" type="text/css" href="../css/open-window.css" />
+
+	</head>
+
+	<body class="ad-area-list">
+		<div class="wrapper">
+			<!--header-->
+			<header>
+				<div class="logo">
+					<a href="../index.html"><img src="../img/logo.png" /></a>
+				</div>
+				<div class="pull-right">
+					<p>欢迎您使用永辉竞价投放后台系统</p>
+					<a href="#"><i class="log-out-icon"></i><span>退出系统</span></a>
+
+				</div>
+			</header>
+			<!--header end-->
+
+			<!--section-->
+			<section class="container-fluid">
+				<div class="row">
+					<!--aside-->
+					<aside class="main-sidebar">
+						<section class="sidebar">
+							<ul class="sidebar-menu">
+								<!--<li class="header">主导航</li>-->
+								<li>
+									<a href="../index.html"><i class="menu-icon icon01"></i><span>广告审核</span></a>
+								</li>
+								<li class="treeview">
+									<a href="../bidplan/schedule-list.html">
+										<i class="menu-icon icon02"></i> <span>档期管理</span> <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="../bidplan/schedule-list.html"><i class="fa fa-circle" aria-hidden="true"></i> 档期列表 </a>
+										</li>
+										<li>
+											<a href="../bidplan/creat-schedule.html"><i class="fa fa-circle" aria-hidden="true"></i> 新增档期 </a>
+										</li>
+									</ul>
+								</li>
+								<li class="treeview">
+									<a href="../ad/ad-management.html">
+										<i class="menu-icon icon03"></i> <span>广告主管理</span> <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+									</a>
+									<ul class="treeview-menu">
+										<li>
+											<a href="../ad/ad-management.html"><i class="fa fa-circle" aria-hidden="true"></i> 广告主列表 </a>
+										</li>
+										<li>
+											<a href="../ad/ad-management-review.html"><i class="fa fa-circle" aria-hidden="true"></i> 开户审核 </a>
+										</li>
+									</ul>
+								</li>
+								<li class="treeview active">
+									<a href="../ad/ad-area-list.html">
+										<i class="menu-icon icon04"></i> <span>广告位管理</span> <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+									</a>
+									<ul class="treeview-menu">
+										<li class="active">
+											<a href="../ad/ad-area-list.html"><i class="fa fa-circle" aria-hidden="true"></i> 广告位列表 </a>
+										</li>
+										<li>
+											<a href="../ad/ad-specification.html"><i class="fa fa-circle" aria-hidden="true"></i> 规格管理 </a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="../invoice/invoice-review.html"><i class="menu-icon icon05"></i> <span>发票审核</span></a>
+								</li>
+								<li>
+									<a href="../logs/operation-log.html"><i class="menu-icon icon06"></i> <span>操作日志</span></a>
+								</li>
+								<li>
+									<a href="../admin/administrators.html"><i class="menu-icon icon07"></i> <span>管理员</span></a>
+								</li>
+							</ul>
+						</section>
+					</aside>
+					<!--aside end-->
+
+					<!--mainBody-->
+					<div class="col-lg-12 col-md-12 mainBody">
+						<!--top-->
+						<div class="top">
+							<div class="topBox">
+								<div class="title">
+									<h2>广告位列表</h2>
+									<p class="pull-right"><i class="fa fa-map-marker" aria-hidden="true"></i>当前位置：<span>广告位管理</span></p>
+								</div>
+								<!--<div class="search-box">
+									<form class="layui-form" action="">
+										<div class="layui-form-item">
+
+											<div class="layui-input-inline">
+												<button type="button" class="layui-btn" lay-submit="" lay-filter="">不启用</button>
+												<button type="button" class="layui-btn" lay-submit="" lay-filter="">启用</button>
+											</div>
+
+										</div>
+									</form>
+								</div>-->
+							</div>
+						</div>
+						<!--top end-->
+
+						<!--content-->
+						<div class="content">
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>广告位名称</th>
+											<th>所属渠道</th>
+											<th>类型</th>
+											<th>规格名称</th>
+											<th>状态</th>
+										</tr>
+									</thead>
+									<tbody id="area_info">
+									</tbody>
+								</table>
+							</div>
+							<div class="bottom">
+								<!--<button type="button" class="layui-btn ad-Area" lay-submit="" ><i class="fa fa-plus-circle" aria-hidden="true"></i>新增广告位</button>-->
+								<div id="pageNumber" class="page-number"></div>
+							</div>
+
+						</div>
+						<!--content end-->
+
+					</div>
+					<!--mainBody end-->
+					<!--footer-->
+					<footer>
+						<p>客服电话：0591-86290888<br /> Copyright @2016 永辉超市股份有限公司 All Rights Reserved</p>
+					</footer>
+					<!--footer end-->
+				</div>
+			</section>
+			<!--section end-->
+
+		</div>
+
+		<!--弹窗-->
+
+		<!-- adAreaEdit -->
+		<div id="adAreaEdit" class="frame-content" style="display: none;">
+			<div class="frame-body ad-area-edit">
+
+				<form class="layui-form" role="form">
+
+					<div class="layui-form-item">
+						<label class="col-md-4 control-label">广告位名称：</label>
+						<div class="col-md-5">
+							<input type="text" class="layui-input" name="area_name" lay-verify="required" placeholder="请输入广告位名称">
+						</div>
+						<div class="col-md-3">
+							<!--<p class="tips">
+									<i class="fa fa-exclamation" aria-hidden="true"></i>Tips
+								</p>-->
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="col-md-4 control-label">页面归属名称：</label>
+						<div class="col-md-5">
+							<input type="text" class="layui-input" name="page_name" lay-verify="required" placeholder="请输入页面归属名称">
+						</div>
+						<div class="col-md-3">
+							<!--<p class="tips">
+									<i class="fa fa-exclamation" aria-hidden="true"></i>Tips
+								</p>-->
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="col-md-4 control-label">选择广告位规格类型：</label>
+						<div class="col-md-5">
+							<div class="layui-input-inline">
+								<select name="ad_spec_type" lay-filter="ad_spec_type" lay-verify="ad_spec_type" >
+									<option value="">请选择位规格类型</option>
+									<option value="1">图片</option>
+									<option value="2">文字</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<!--<p class="tips">
+									<i class="fa fa-exclamation" aria-hidden="true"></i>Tips
+								</p>-->
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="col-md-4 control-label">选择广告位规格：</label>
+						<div class="col-md-5">
+							<div class="layui-input-inline">
+								<select name="ad_spec" lay-filter="ad_spec"  lay-verify="ad_spec">
+									<option value="">请选择广告位规格</option>
+									<option value="0">图片（900*500px）</option>
+									<option value="1">文字（1-15字符）</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<button type="button" class="layui-btn" id="add_ad_spec">新增广告位规格</button>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="col-md-4 control-label">选择所属渠道：</label>
+						<div class="col-md-5">
+							<div class="layui-input-inline">
+								<select name="channel" lay-filter="channel" lay-verify="channel" >
+									<option value="">请选择所属渠道</option>
+									<option value="0">永辉超市</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<!--<p class="tips">
+									<i class="fa fa-exclamation" aria-hidden="true"></i>Tips
+								</p>-->
+						</div>
+					</div>
+
+					<div class="layui-form-item" id="upload_adimg">
+						<label class="col-md-4 control-label">上传广告位示意图：</label>
+						<div class="col-md-5">
+							<input name="file" class="layui-upload-file" lay-verify="ad_img" lay-type="images" lay-title="请上传示意图" type="file">
+							<p class="tips">规格：900*500px 小于等于2M</p>
+						</div>
+						<div class="col-md-3">
+							<button type="button" class="layui-btn" >预览</button>
+						</div>
+					</div>
+					
+					<div class="layui-form-item">
+						<div class="button-box">
+							<button type="button" class="layui-btn" lay-submit lay-filter="">保存广告位</button>
+							<button type="button" class="layui-btn layui-btn-primary" id="back_list">返回列表</button>
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+		<!-- adAreaEdit end -->
+
+		<!--弹窗-->
+
+		<!-- jQuery -->
+		<script src="../js/jquery.min.js"></script>
+		<!--<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>-->
+
+		<!-- Layui JavaScript -->
+		<script src="../extend/layui/layui.js"></script>
+
+		<!--layer-v2.4 弹层-->
+		<!--<script src="extend/layer/layer.js"></script>-->
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="../extend/bootstrap/js/bootstrap.min.js"></script>
+		<!--<script src="extend/bootstrap-switch/js/bootstrap-switch.js"></script>-->
+
+		<!-- JavaScript -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script>
+			window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')
+		</script>
+
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+		<!--custom-->
+		<script src="../js/custom.js"></script>
+
+		<!--open-window-->
+		<script src="../js/open-window.js"></script>
+
+		<!--sidebar-menu-->
+		<script src="../extend/sidebar-menu/sidebar-menu.js"></script>
+
+		<script>
+			$.sidebarMenu($('.sidebar-menu'))
+		</script>
+
+		<script>
+			layui.use('laypage', function() {
+				var laypage = layui.laypage,
+					layer = layui.layer;
+
+				laypage({
+					cont: 'pageNumber',
+					pages: 5,
+					skin: '#2089ff'
+				});
+
+			});
+		</script>
+		
+        <script src="js/ad_area.js"></script>
+        <script src="../js/common.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,7 @@
+client_url_bid=http://10.0.36.180:9000/service_bid/BidService
+client_read_timeout_bid=5000
+client_connect_timeout_bid=3000
+
+client_url_bidcache=http://10.0.36.180:9000/service_bid/BidCacheService
+client_read_timeout_bidcache=5000
+client_connect_timeout_bidcache=3000

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.mydiv{ 
+	   width:300px;  
+	   height:200px;  
+	   position:absolute;  
+	   left:50%;  
+	   top:50%;  
+	   margin:-100px 0 0 -150px 
+	} 
+</style>
+</head>
+<body>
+<div class="mydiv">
+	<form id="loginForm" >
+		<table>
+			<tr>
+				<td>
+				用户名：<input type="text" id="loginName" name="loginName">
+				</td>
+			</tr>
+			<tr>
+				<td>
+				用户名：<input type="text" id="password" name="password">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" id="btnSubmit" name="btnSubmit" value="登录">
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>

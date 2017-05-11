@@ -1,0 +1,508 @@
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /* 头部标题栏 header start */
+ 
+ header p {
+     display: inline-block;
+     color: #664545;
+     font-size: 14px;
+     font-weight: bold;
+     line-height: 80px;
+     margin-top: 10px;
+ }
+ 
+ header p span {
+     color: #e6614f;
+ }
+ /* 头部标题栏 header end */
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /* switch */
+ 
+ .pull-right {
+     line-height: 90px;
+ }
+ 
+ .pull-right h3 {
+     /*color: #997244;
+     font-size: 14px;
+     display: inline-block;
+     margin: 0;*/
+ }
+ 
+ .pull-right .layui-form {
+     display: inline-block;
+     position: relative;
+ }
+ 
+ .pull-right .layui-form .layui-form-item {
+     width: 110px;
+     height: 30px;
+ }
+ 
+ .pull-right .layui-form-item .layui-form-label {
+     width: auto;
+     color: #997244;
+     font-size: 14px;
+     font-weight: normal;
+     line-height: 90px;
+     padding: 0;
+ }
+ 
+ .pull-right .layui-form-item .layui-input-inline {
+     width: auto;
+ }
+ 
+ .pull-right .layui-form-switch {
+     width: 72px;
+     height: 30px;
+     line-height: 28px;
+     margin-top: 0px;
+ }
+ 
+ .pull-right .layui-form-onswitch {
+     border-color: #e6614f;
+     background-color: #e6614f;
+ }
+ 
+ .layui-form-onswitch::before {
+     content: '开启';
+     padding-left: 6px;
+ }
+ 
+ .pull-right .layui-form-switch i {
+     width: 22px;
+     height: 22px;
+ }
+ 
+ .pull-right .layui-form-onswitch i {
+     left: 44px;
+     background-color: #fff;
+ }
+ /* switch end */
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /* remind-window start */
+ 
+ .remind-window {
+     position: absolute;
+     top: 70px;
+     right: 0;
+     text-align: center;
+     width: 350px;
+     padding: 30px;
+     background-color: #fff;
+     border-radius: 2px;
+     border: 1px solid #d5d5d5;
+     z-index: 999;
+ }
+ 
+ .remind-window p {
+     width: 100%;
+     color: #75757a;
+     font-size: 12px;
+     line-height: 24px;
+     font-weight: normal;
+     text-align: left;
+     padding-bottom: 12px;
+     border-bottom: 1px solid #d5d5d5;
+ }
+ 
+ .remind-window p.remind-content {
+     color: #e6614f;
+     margin-bottom: 30px;
+ }
+ 
+ .remind-window .btn-default {
+     width: 120px;
+     height: 36px;
+ }
+ /* remind-window end */
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /*nav-tab start*/
+ 
+ .auction .nav-tabs {
+     background: url("../img/nav-tabs-bg.png") 0px 0px no-repeat;
+ }
+ 
+ .auction .nav> li> a {
+     position: relative;
+     display: block;
+     width: 250px;
+     height: 50px;
+     text-align: center;
+     padding: 0;
+     line-height: 50px !important;
+ }
+ 
+ .nav-tabs> li> a,
+ .nav-tabs> li> a:focus,
+ .nav-tabs> li> a:hover {
+     color: #969595;
+     cursor: default;
+     background-color: transparent;
+     border: none;
+     border-bottom-color: transparent;
+ }
+ 
+ .nav-tabs> li.active> a,
+ .nav-tabs> li.active> a:focus,
+ .nav-tabs> li.active> a:hover {
+     color: #666;
+     cursor: default;
+     background-color: transparent;
+     border: none;
+     border-bottom-color: transparent;
+ }
+ 
+ .auction .nav-tabs> li> a i {
+     width: 16px;
+     height: 16px;
+     position: absolute;
+     top: 17px;
+     left: 75px;
+ }
+ 
+ .auction .nav-tabs> li.active> a i.auction-icon-01 {
+     background: url(../img/css-sprite.png) -180px 0px no-repeat;
+ }
+ 
+ .auction .nav-tabs> li> a i.auction-icon-01 {
+     background: url(../img/css-sprite.png) -180px -16px no-repeat;
+ }
+ 
+ .auction .nav-tabs> li.active> a i.auction-icon-02 {
+     background: url(../img/css-sprite.png) -205px 0px no-repeat;
+ }
+ 
+ .auction .nav-tabs> li> a i.auction-icon-02 {
+     background: url(../img/css-sprite.png) -205px -16px no-repeat;
+ }
+ 
+ .auction .nav-tabs> li.active> a i.auction-icon-03 {
+     background: url(../img/css-sprite.png) -230px 0px no-repeat;
+ }
+ 
+ .auction .nav-tabs> li> a i.auction-icon-03 {
+     background: url(../img/css-sprite.png) -230px -16px no-repeat;
+ }
+ /*nav-tab end*/
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /*tabpanel 01 start*/
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /*table start*/
+ 
+ .auction .nav-tabs> li.disabled> a i.auction-icon-02 {
+     background: url(../img/css-sprite.png) -205px -16px no-repeat;
+ }
+ 
+ .auction .nav-tabs> li.disabled> a {
+     color: #969595;
+ }
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /*extend*/
+ 
+ .table-hover> tbody> tr.extend td,
+ .table-hover> tbody> tr.extend:hover td {
+     font-weight: normal;
+     background-color: #f8f8f8;
+ }
+ 
+ .table> tbody> tr.extend> td {
+     text-align: left;
+     padding: 30px 38px;
+     line-height: 1;
+ }
+ 
+ .extend .row .choice-title {
+     text-align: left;
+     line-height: 30px;
+     padding-right: 5px;
+ }
+ 
+ .extend .row .industry {
+     padding-left: 5px;
+     padding-right: 5px;
+     border-right: 2px solid #c54f3f;
+ }
+ 
+ .extend .row .industry button {
+     display: inline-block;
+     color: #666;
+     font-size: 12px;
+     height: 30px;
+     /*line-height: 30px;*/
+     padding: 0 18px;
+     border: 2px solid #e6614f;
+     border-radius: 15px;
+     background-color: #fff;
+     margin-right: 10px;
+     margin-bottom: 10px;
+ }
+ 
+ .extend .row .industry button.active,
+ .extend .row .industry button:hover,
+ .extend .row .industry button:focus {
+     color: #fff;
+     background-color: #e6614f;
+ }
+ 
+ .extend .row .perfunctory {
+     padding-left: 40px;
+ }
+ 
+ .extend .row .perfunctory p {
+     color: #666;
+     line-height: 30px;
+     margin-bottom: 10px;
+ }
+ 
+ .extend .row .perfunctory p span {
+     color: #e6614f;
+ }
+ 
+ .extend .row .perfunctory p .fa {
+     position: inherit;
+     width: 24px;
+     height: 24px;
+     font-size: 24px;
+     color: #ffbf4f;
+ }
+ 
+ .extend .row .perfunctory p .disabled {
+     color: #e7e7e7;
+ }
+ 
+ .extend .row .perfunctory .btn-default {
+     width: 110px;
+     height: 36px;
+ }
+ /*extend end*/
+ /*table end*/
+ /*tabpanel 01 end*/
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /*tabpanel 02*/
+ 
+ #offer .row {
+     width: auto;
+     margin-top: 20px;
+     margin-bottom: 50px;
+ }
+ 
+ #offer .row .col-xs-4 p,
+ #offer .row .col-xs-6 p {
+     color: #666;
+     font-size: 14px;
+     line-height: 36px;
+     border: none;
+ }
+ 
+ #offer .row .col-xs-12 {
+     padding-top: 50px;
+ }
+ 
+ #offer .row .col-xs-4 p a,
+ #offer .row .col-xs-6 p a {
+     color: #e6614f;
+ }
+ 
+ .form-inline .form-group {
+     display: inline-block;
+     margin-bottom: 0;
+     vertical-align: middle;
+ }
+ 
+ .form-inline .button-box {
+     margin-top: 0;
+ }
+ 
+ #offer .form-inline .form-group .btn-default {
+     width: 36px;
+     height: 36px !important;
+ }
+ 
+ #offer .form-inline .form-group .btn-default.disabled {
+     color: #fff !important;
+     background-color: #ccc;
+     border: none;
+ }
+ 
+ #offer .form-inline .form-group .btn-default.disabled:focus,
+ #offer .form-inline .form-group .btn-default.disabled:hover {
+     background-color: #ccc;
+     border: none;
+ }
+ 
+ #offer .form-inline .button-box .btn-default {
+     width: 100px;
+     line-height: 36px;
+     text-align: center;
+     padding: 0;
+     margin-left: 10px;
+ }
+ 
+ #offer .form-inline .form-group input {
+     width: 120px;
+     height: 36px;
+     border: 1px solid #d5d5d5;
+     border-radius: 2px;
+     padding-right: 15px;
+     background-color: #f8f8f8;
+     outline: 0;
+     box-shadow: none;
+ }
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /*tabpanel 03*/
+ 
+ #result {
+     padding-top: 20px;
+ }
+ 
+ #result .table {
+     border-top: none;
+ }
+ 
+ #result table>tbody> tr> td> .btn-default {
+     color: #fff;
+     text-shadow: none;
+     width: 100px;
+     height: 36px;
+     outline: 0;
+ }
+ 
+ #result table>tbody> tr> td.locked> .btn-default {
+     background-color: #f5715f;
+     border: 1px solid #c74545;
+ }
+ 
+ #result table>tbody> tr> td.locked> .btn-default:active:focus {
+     color: #fff;
+     background-color: #f5715f;
+     border-color: transparent;
+     border-top: 5px solid #d55f5f;
+     box-shadow: none;
+     outline: 0;
+ }
+ 
+ #result table>tbody> tr> td.over> .btn-default,
+ #result table>tbody> tr> td.over> .btn-default:active {
+     background-color: #d5d5d5;
+     border: 1px solid #a8a8a8;
+     cursor: not-allowed;
+ }
+ 
+ #result p {
+     font-size: 14px;
+     text-align: center;
+ }
+ /*tabpanel 03 end*/
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /*右侧隐藏弹窗*/
+ /*auction-record*/
+ 
+ .auction-record {
+     position: absolute;
+     top: 49px;
+     right: 0px;
+     width: 385px;
+     transition: .2s;
+ }
+ 
+ .auction-record .record-show {
+     position: absolute;
+     top: 42px;
+     /*left: 0px;*/
+     left: 348px;
+     color: #997244;
+     font-size: 12px;
+     width: 36px;
+     height: 136px;
+     border-radius: 2px;
+     border: 1px solid #b98f5d;
+     background-color: #f7cc8e;
+     cursor: default;
+     z-index: 1;
+ }
+ 
+ .auction-record .record-show .top {
+     color: #9d7646;
+     font-size: 16px;
+     text-align: center;
+     line-height: 36px;
+     /*width: 36px;*/
+     height: 36px;
+     border-bottom: 1px solid #b98f5d;
+ }
+ 
+ .auction-record .record-show p {
+     color: #997244;
+     font-size: 12px;
+     widows: 14px;
+     height: 13px;
+     line-height: 13px;
+     vertical-align: middle;
+     padding-top: 10px;
+     padding-left: 12px;
+ }
+ 
+ .auction-record .record-list {
+     position: absolute;
+     right: 0;
+     width: 350px;
+     height: 360px;
+     border-radius: 2px;
+     border: 1px solid #d5d5d5;
+     background-color: #fff;
+     overflow-y: scroll;
+ }
+
+ .auction-record .record-list .table {
+     border-top: none;
+     border-bottom: none;
+ }
+ 
+ .auction-record .record-list .table> thead {
+     /*position: fixed;*/
+     width: 350px;
+     background-color: #f8f8f8;
+     z-index: 999;
+ }
+ 
+ .auction-record .record-list .table> thead tr {
+     width: 250px;
+ }
+ 
+ .auction-record .record-list .table> tbody {
+     position: absolute;
+     top: 40px;
+ }
+ 
+ .auction-record .record-list .table> thead> tr> th,
+ .auction-record .record-list .table> tbody> tr> td {
+     color: #666;
+     font-size: 12px;
+     font-weight: normal;
+     line-height: 40px;
+     width: 275px;
+     padding: 0px 8px;
+     padding-left: 40px;
+ }
+ 
+ .auction-record .record-list .table> tbody> tr> td {
+     line-height: 60px;
+ }
+ 
+ .auction-record .record-list .table> tbody> tr:first-child> td {
+     border: none;
+ }
+ /*auction-record end*/
+ /*tabpanel 02 end*/
+ /* --------------------------------------------------
+-------------------------------------------------- */

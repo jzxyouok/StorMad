@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="webapp_bp">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WEB-INF/src"/>
+        <property name="java-output-path" value="/webapp_bp/WEB-INF/classes"/>
+        <property name="context-root" value="webapp_bp"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,75 @@
+$(function() {
+
+	//表达验证与提交
+	layui.use('form', function(){
+		var form = layui.form();
+		
+/*		form.on('checkbox(iids)', function(data){
+			   if(data.elem.checked)
+			   {
+				  iids.push(data.value);
+			   }
+			   else
+			   {
+				  iids.splice($.inArray('data.value',iids),1);  
+			   }
+			  //console.log(data.value); //复选框value值，也可以通过data.elem.value得到
+		});      */  
+      	
+		//提交新增表单
+		form.on('submit(sub)', function(data){
+			var val=data.field;
+			var url=yonghui.contextPath + '/api/bidplan/create.jsp';
+			
+			//获取行业数组
+			var iids=[];
+			var iidsObj=$(".industry-type :input");
+			for(var i=0; i<iidsObj.length; i++){ 
+				if(iidsObj[i].checked)
+				{
+					iids.push(iidsObj[i].value);	
+				}
+			} 
+			
+			//获取广告位置数组
+			var alIds=[];
+			var alIdsObj=$(".ad_area :input");
+			for(var i=0; i<alIdsObj.length; i++){ 
+				if(alIdsObj[i].checked)
+				{
+					alIds.push(alIdsObj[i].value);	
+				}
+			} 
+			
+			console.log(alIds);
+
+			$.ajax({
+				type : 'POST',
+				url  : url,
+				data : {'bpName':val.bpName, 'iids':iids, 'startTime':get_time(val.startTime), 'endTime':get_time(val.endTime), 'repeatedType':val.repeatedType, 'chargeType':val.chargeType, 'alIds':alIds, 'cBasePrice':val.cBasePrice, 'cBasePrice':val.cBasePrice},
+				dataType : 'json',
+				success : function(data) {
+					if(data.errCode == 0) {
+						layer.msg("添加成功");
+						location.reload();
+					} else {
+						layer.alert(data.errMsg);
+					}
+				},
+				error : function(data) {
+					layer.alert('添加异常');
+				}
+			});
+			
+		 	 return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+		});
+		
+	});
+
+});
+
+//时间转换为时间戳  毫秒
+function get_time(time)
+{
+	return Date.parse(new Date(time));
+}

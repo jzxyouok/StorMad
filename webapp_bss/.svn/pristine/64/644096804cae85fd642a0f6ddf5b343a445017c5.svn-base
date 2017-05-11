@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>永辉竞价投放后台系统 - 发票审核</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="keywords" content="keywords" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="../extend/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../assets/js/ie-emulation-modes-warning.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--extend css-->
+    <link rel="stylesheet" href="../extend/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../extend/layui/css/layui.css">
+    <!-- Custom styles for this non-responsive system -->
+    <!-- <link href="extend/bootstrap/css/non-responsive.css" rel="stylesheet"> -->
+    <!-- sidebar-menu -->
+    <link href="../extend/sidebar-menu/sidebar-menu.css" rel="stylesheet">
+    <!-- Custom css -->
+    <link href="../css/bss-global.css" rel="stylesheet">
+    <link href="../css/bss-invoice.css" rel="stylesheet">
+    <link href="../css/bss-responsive.css" rel="stylesheet">
+    <link href="../css/bss-open-window.css" rel="stylesheet">
+</head>
+
+<body class="invoice-review">
+    <div class="wrapper">
+        <!--header-->
+        <header>
+            <div class="logo">
+                <a href="../index.html"><img src="../img/logo.png" /></a>
+            </div>
+            <div class="pull-right">
+                <p>欢迎您使用永辉竞价投放后台系统</p>
+                <a href="#"><i class="log-out-icon"></i><span>退出系统</span></a>
+            </div>
+        </header>
+        <!--header end-->
+        <!--section-->
+        <section class="container-fluid">
+            <div class="row">
+                <!--aside-->
+                <aside class="main-sidebar">
+                    <section class="sidebar">
+                        <ul class="sidebar-menu">
+                            <!--<li class="header">主导航</li>-->
+                            <li>
+                                <a href="../index.html"><i class="menu-icon icon01"></i><span>广告审核</span></a>
+                            </li>
+                            <li class="treeview">
+                                <a href="../bidplan/schedule-list.html">
+                                    <i class="menu-icon icon02"></i> <span>档期管理</span> <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="../bidplan/schedule-list.html"><i class="fa fa-circle" aria-hidden="true"></i> 档期列表 </a>
+                                    </li>
+                                    <li>
+                                        <a href="../bidplan/creat-schedule.html"><i class="fa fa-circle" aria-hidden="true"></i> 新增档期 </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="../ad/ad-management.html">
+                                    <i class="menu-icon icon03"></i> <span>广告主管理</span> <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="../ad/ad-management.html"><i class="fa fa-circle" aria-hidden="true"></i> 广告主列表 </a>
+                                    </li>
+                                    <li>
+                                        <a href="../ad/ad-management-review.html"><i class="fa fa-circle" aria-hidden="true"></i> 开户审核 </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="../ad/ad-area-list.html">
+                                    <i class="menu-icon icon04"></i> <span>广告位管理</span> <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="../ad/ad-area-list.html"><i class="fa fa-circle" aria-hidden="true"></i> 广告位列表 </a>
+                                    </li>
+                                    <li>
+                                        <a href="../ad/ad-specification.html"><i class="fa fa-circle" aria-hidden="true"></i> 规格管理 </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="active">
+                                <a href="../invoice/invoice-review.html"><i class="menu-icon icon05"></i> <span>发票审核</span></a>
+                            </li>
+                            <li>
+                                <a href="../logs/operation-log.html"><i class="menu-icon icon06"></i> <span>操作日志</span></a>
+                            </li>
+                            <li>
+                                <a href="../admin/administrators.html"><i class="menu-icon icon07"></i> <span>管理员</span></a>
+                            </li>
+                        </ul>
+                    </section>
+                </aside>
+                <!--aside end-->
+                <!--mainBody-->
+                <div class="col-xs-12 main-body">
+                    <!--top-->
+                    <div class="top">
+                        <div class="title">
+                            <h2>发票审核</h2>
+                            <p class="pull-right"><i class="fa fa-map-marker" aria-hidden="true"></i>当前位置：<span>发票审核</span></p>
+                        </div>
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">申请月份：</label>
+                                <div class="layui-input-inline">
+                                    <!-- <input class="layui-input" id="yearMonth" name="yearMonth" placeholder="选择年月" onclick="layui.laydate({elem: this, festival: true})"> -->
+                                    <input class="layui-input " name="yearMonth" placeholder="选择年月" onclick="layui.laydate({elem: this, festival: true, format: 'YYYY-MM'})">
+                                </div>
+                                <label class="layui-form-label">广告主名称：</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" name="corpName" type="text" placeholder="请输入广告主名称">
+                                </div>
+                                <label class="layui-form-label">状态：</label>
+                                <div class="layui-input-inline">
+                                    <select name="status" id="status">
+                                        <option value="">审核状态</option>
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                                <div class="layui-input-inline">
+                                    <button type="button" class="layui-btn" lay-submit lay-filter="serach">查询</button>
+                                    <button type="button" class="layui-btn" lay-submit="" lay-filter="">数据导出</button>
+                                    <button type="button" class="layui-btn" lay-submit="" lay-filter="">数据导入</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--top end-->
+                    <!--content-->
+                    <div class="content">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>申请时间</th>
+                                        <th>广告主</th>
+                                        <th>发票信息</th>
+                                        <th>发票金额（元）</th>
+                                        <th>状态</th>
+                                        <th>寄件信息</th>
+                                        <th>发票号</th>
+                                        <th>快递单号</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="invoice_info" class="show_info">
+                                </tbody>
+                                <!--无消息层-->
+                                <div class="empty-tips no_info" style="display: none;">
+                                    <p><i class="exclamation-icon" aria-hidden="true"></i><span>当前无广告主记录。</span></p>
+                                </div>
+                                <!--无消息层-->
+                            </table>
+                        </div>
+                        <!-- <div id="pageNumber" class="page-number"></div> -->
+                        <div class="bottom">
+                            <div id="pageNumber" class="page-number"></div>
+                        </div>
+                    </div>
+                    <!--content end-->
+                </div>
+                <!--mainBody end-->
+                <!--footer-->
+                <footer>
+                    <p>Copyright @2016 永辉超市股份有限公司 All Rights Reserved</p>
+                </footer>
+                <!--footer end-->
+            </div>
+        </section>
+        <!--section end-->
+    </div>
+    <!--弹窗-->
+    <!-- invoicePreview -->
+    <div id="invoicePreview" class="frame-content" style="display: none;">
+        <div class="frame-body invoice-preview">
+            <p>联系人姓名：<span id="addr_name"></span></p>
+            <p>联系人电话：<span id="addr_phone"></span></p>
+            <p>联系人地址：<span id="addr_addr"></span></p>
+        </div>
+    </div>
+    <!-- invoicePreview end -->
+    <!-- invoiceInfoReview -->
+    <div id="invoiceInfoReview" class="frame-content" style="display: none;">
+        <form class="layui-form">
+            <div class="frame-body invoice-preview invoice-info-review">
+                <p><span>账期：</span> <span id="acctPeriod"></span></p>
+                <p><span>发票名称：</span> <span id="title"></span></p>
+                <p><span>开票金额：</span> <span id="money"></span></p>
+                <p><span>发票抬头：</span> <span id="corporation"></span></p>
+                <p><span>开户银行：</span> <span id="bank"></span></p>
+                <p><span>营业电话：</span> <span id="phone"></span></p>
+                <p><span>营业地址：</span> <span id="addr"></span></p>
+                <div class="button-box">
+                    <button type="button" class="layui-btn" lay-submit id="sub_audit" lay-filter="sub_audit">审核通过</button>
+                    <button type="button" class="layui-btn layui-btn-primary" lay-submit id="sub_audit_no" lay-filter="sub_audit_no">审核不通过</button>
+                    <a class="disabled" href="#">跳过，下一个</a>
+                </div>
+            </div>
+            <input type="hidden" value="" id="ivId" name="ivId" />
+        </form>
+    </div>
+    <!-- invoiceInfoReview end -->
+    <!--弹窗-->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')
+    </script>
+    <script src="../extend/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../extend/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../extend/js/ie10-viewport-bug-workaround.js"></script>
+    <!--sidebar-menu-->
+    <script src="../extend/sidebar-menu/sidebar-menu.js"></script>
+    <script>
+    $.sidebarMenu($('.sidebar-menu'))
+    </script>
+    <!-- Extend JavaScript -->
+    <script src="../extend/layui/layui.js"></script>
+    <!-- respond JavaScript -->
+    <script src="../js/respond.src.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="../js/bss-custom.js"></script>
+    <script src="../js/bss-open-window.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="js/invoice.js"></script>
+    <script>
+    layui.use('laydate', function() {
+        var laydate = layui.laydate;
+
+        var start = {
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istoday: false,
+            choose: function(datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+
+        var end = {
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istoday: false,
+            choose: function(datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+
+        document.getElementById('yearMonth').onclick = function() {
+            start.elem = this;
+            laydate(start);
+        }
+        document.getElementById('yearMonth').onclick = function() {
+            end.elem = this
+            laydate(end);
+        }
+
+    });
+    </script>
+</body>
+
+</html>

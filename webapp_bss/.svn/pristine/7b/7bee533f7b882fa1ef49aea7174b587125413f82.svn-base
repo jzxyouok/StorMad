@@ -1,0 +1,7 @@
+addr_client_url=http://10.0.36.180:9006/service_invoice/AddrService
+addr_client_read_timeout=3000
+addr_client_connect_timeout=3000
+
+invoice_client_url=http://10.0.36.180:9006/service_invoice/InvoiceService
+invoice_client_read_timeout=3000
+invoice_client_connect_timeout=3000

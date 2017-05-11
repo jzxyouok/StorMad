@@ -1,0 +1,309 @@
+/* --------------------------------------------------
+-------------------------------------------------- */
+
+
+/*new-account start*/
+
+.new-account {
+    position: relative;
+    width: 850px;
+    background-color: #fff;
+    border-radius: 2px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+}
+
+.new-account .form-horizontal {
+    margin-top: 45px;
+}
+
+.new-account .form-group {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.new-account .form-group .col-xs-3 {
+    padding-left: 0px;
+}
+
+.layui-form-item {
+    margin-bottom: 0 !important;
+}
+
+.layui-form-item .layui-input-inline {
+    float: left;
+    width: 100% !important;
+    margin-right: 10px;
+}
+
+.layui-form-item .col-xs-6 {
+    margin-bottom: 10px;
+}
+
+.layui-form-item .col-xs-6 .col-xs-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.layui-form-item .col-xs-6 .col-xs-4:first-child {
+    padding-left: 15px;
+}
+
+.layui-form-item .col-xs-6 .col-xs-4:last-child {
+    padding-right: 15px;
+}
+
+.layui-form-select dl {
+    top: 52px;
+}
+
+.layui-form-select dl dd.layui-this {
+    background-color: #f56760 !important;
+    color: #fff;
+}
+
+.new-account .form-group label {
+    line-height: 50px;
+    padding-top: 0;
+}
+
+.new-account .form-group input {
+    color: #bababa;
+    font-size: 12px;
+    height: 50px;
+    padding-left: 20px;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+}
+
+.new-account .form-group input:focus {
+    color: #c47773;
+    border-color: #c47773;
+    box-shadow: none;
+}
+
+.new-account .form-group p.tips {
+    position: relative;
+    float: left;
+    color: #f56760;
+    font-size: 12px;
+    text-align: left;
+    line-height: 50px;
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+
+.new-account .form-group p i {
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+
+.new-account .form-group .verification .col-xs-7 {
+    padding-right: 0;
+}
+
+.new-account .form-group .verification .col-xs-5 {
+    padding-left: 0;
+}
+
+.new-account .form-group .verification button {
+    font-size: 12px;
+    height: 50px;
+    float: left;
+    color: #666;
+    text-shadow: none;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    outline: 0;
+}
+
+.new-account .form-group .verification button:active:focus {
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    border-top: 3px solid #d5d5d5;
+    box-shadow: none;
+    outline: 0;
+}
+
+.upload {
+    position: relative;
+    width: 100%;
+    min-height: 170px;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 10px;
+    overflow: hidden;
+    color: #bababa;
+    font-size: 12px;
+    text-align: left;
+    padding-top: 70px;
+}
+
+.upload img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 280px;
+    max-height: 150px;
+    z-index: 2;
+}
+
+.upload .upbar {
+    position: absolute;
+    /*top: 50%;
+	left: 50%;*/
+    margin: -18px 0 0 -56px;
+    /*opacity: .7;*/
+    right: 5px;
+    bottom: 5px;
+}
+
+.layui-upload-button {
+    color: #bababa;
+    height: 36px;
+    line-height: 36px;
+    border: 1px solid #d5d5d5;
+}
+
+.layui-upload-icon i {
+    color: #e6614f;
+}
+
+.new-account .agreement {
+    margin-bottom: 0;
+}
+
+.new-account .form-group .checkbox {
+    text-align: left;
+    padding-top: 0;
+}
+
+.new-account .form-group .checkbox label {
+    color: #757575;
+}
+
+.new-account .form-group .checkbox label a,
+.new-account .form-group .checkbox label a:hover {
+    color: #e6614f;
+}
+
+.new-account .form-group .checkbox label input[type="checkbox"] {
+    margin-top: 0px;
+}
+
+.account-bottom .form-group:last-child {
+    padding-bottom: 60px;
+}
+
+.new-account .form-group:last-child p {
+    color: #bababa;
+    text-align: left;
+    line-height: 20px;
+}
+
+
+/*new-account end*/
+
+
+/* --------------------------------------------------
+-------------------------------------------------- */
+
+
+/*account-bottom start*/
+
+.new-account .account-bottom {
+    padding-top: 40px;
+}
+
+
+/*checkbox*/
+
+.account-bottom .agreement .checkbox-main .checkbox {
+    min-height: 14px;
+}
+
+.account-bottom .agreement label {
+    padding-left: 0;
+    line-height: 14px;
+}
+
+.account-bottom .agreement .checkbox-main span.checkbox {
+    margin-top: -3px;
+}
+
+.account-bottom .agreement .checkbox-main > label > span > i {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.account-bottom .agreement .checkbox-main > label > span > input {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*checkbox*/
+
+.new-account .account-bottom .button-box .btn-default {
+    height: 50px;
+}
+
+
+/*account-bottom end*/
+
+
+/* --------------------------------------------------
+-------------------------------------------------- */
+
+
+/*modal*/
+
+.modal-dialog {
+    margin-top: 100px;
+}
+
+.modal-body {
+    /*font-size: 16px;*/
+    text-align: left;
+    line-height: 30px;
+    padding: 0 30px 30px 30px;
+}
+
+.modal-body h2 {
+    font-size: 20px;
+    line-height: 60px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-body h3 {
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.modal-body ol:last-child {
+    margin-bottom: 50px;
+}
+
+
+/*modal end*/
+
+
+/* --------------------------------------------------
+-------------------------------------------------- */

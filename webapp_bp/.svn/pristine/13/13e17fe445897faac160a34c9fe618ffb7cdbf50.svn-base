@@ -1,0 +1,309 @@
+/* --------------------------------------------------
+-------------------------------------------------- */
+
+
+/*login-container*/
+
+.login-container form {
+    width: 360px;
+    margin: 0 auto;
+}
+
+.login-container form .form-group {
+    position: relative;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.login-container form .form-group input {
+    color: #bababa;
+    font-size: 12px;
+    height: 50px;
+    border: 1px solid #d5d5d5;
+    border-radius: 2px;
+    box-shadow: none;
+    padding-left: 45px;
+}
+
+.login-container form .form-group input:focus {
+    color: #e6614f;
+    border-color: #c47773;
+}
+
+.login-container form .form-group i {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    position: absolute;
+    top: 15px;
+    left: 12px;
+}
+
+.login-container form .form-group i.user-icon {
+    background: url(../img/css-sprite.png) 0 0 no-repeat;
+}
+
+.login-container form .form-group i.password-icon {
+    background: url(../img/css-sprite.png) -30px 0 no-repeat;
+}
+
+.login-container form .form-group .verification-code {
+    width: 220px;
+    height: 50px;
+    float: left;
+}
+
+.login-container form .form-group .verification-code input {
+    padding-left: 20px;
+}
+
+.login-container form .form-group .verification-code-pic {
+    width: 130px;
+    height: 50px;
+    float: left;
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+.login-container form .form-group .verification-code-pic img {
+    width: 130px;
+    height: 50px;
+    border-radius: 2px;
+}
+
+.login-container form .checkbox-main > label > span > i {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.login-container form .checkbox-main > label > span > input {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.login-container form .form-group p i {
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+.login-container form .button-box {
+    padding-bottom: 30px;
+    margin-bottom: 0;
+}
+
+.login-container form .button-box .btn-default {
+    height: 50px;
+}
+
+.login-container form .account-box {
+    padding-bottom: 105px;
+    margin-bottom: 0;
+}
+
+
+/*.login-container form .account-box a.forget,
+.login-container form .account-box a.forget:hover {
+    color: #75757a;
+    text-decoration: none;
+    padding: 0 5px;
+}*/
+
+
+/* 登录 login/index end */
+
+
+/* --------------------------------------------------
+-------------------------------------------------- */
+
+
+/*forgot-password start*/
+
+.forgot-password {
+    position: relative;
+    width: 850px;
+    height: 680px;
+    background-color: #fff;
+    border-radius: 2px;
+    margin-right: auto;
+    margin-left: auto;
+    /*test*/
+    /*border-top: 1px solid #000;*/
+}
+
+.forgot-password .info {
+    width: 360px;
+    margin: 0 auto;
+    color: #f56760;
+    font-size: 12px;
+    padding-top: 45px;
+}
+
+.forgot-password .info p {
+    color: #666;
+    font-size: 12px;
+    text-align: left;
+    line-height: 32px;
+}
+
+.forgot-password .info p a {
+    color: #666;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.forgot-password .info p strong {
+    padding: 0 5px;
+}
+
+.forgot-password .form-group {
+    /*position: relative;
+    width: 360px;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;*/
+}
+
+.forgot-password .form-group input {
+    padding-left: 15px !important;
+}
+
+.forgot-password .verification input {
+    width: 220px;
+    float: left;
+}
+
+.forgot-password .form-group input:focus {
+    color: #e6614f;
+    border-color: #c47773;
+    box-shadow: none;
+}
+
+.forgot-password .verification button {
+    font-size: 12px;
+    width: 140px;
+    height: 50px;
+    float: left;
+    color: #666;
+    text-shadow: none;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    outline: 0;
+}
+
+.forgot-password .verification button:active:focus {
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    border-top: 3px solid #d5d5d5;
+    box-shadow: none;
+    outline: 0;
+}
+
+.forgot-password .tips-box {
+    position: relative;
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.forgot-password .tips-box p {
+    position: relative;
+    color: #f56760;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.forgot-password .tips-box p i {
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    position: absolute;
+    top: 1px;
+    left: 0;
+}
+
+
+/*.forgot-password .tips-box p i.exclamation-icon {
+    background: url(../img/css-sprite.png) -100px 0 no-repeat;
+}*/
+
+.forgot-password .button-box {
+    padding-top: 30px;
+    margin-bottom: 0;
+}
+
+.forgot-password .button-box .btn-default {
+    width: 360px;
+    height: 50px;
+}
+
+.forgot-password .new-password {
+    padding-top: 45px;
+}
+
+.forgot-password .form-group input[type="password"] {
+    color: #bababa;
+    font-size: 12px;
+    height: 50px;
+    padding-left: 20px;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+}
+
+.forgot-password .form-group input[type="password"]:focus {
+    color: #c47773;
+    border-color: #c47773;
+}
+
+.forgot-password .new-password p.tips {
+    color: #f56760;
+    font-size: 12px;
+    text-align: left;
+    line-height: 36px;
+    margin-bottom: 0;
+}
+
+.forgot-password .new-password p .fa {
+    position: inherit;
+    color: #f56760;
+    font-size: 12px;
+}
+
+
+/*forgot-password end*/
+
+
+/* --------------------------------------------------
+-------------------------------------------------- */
+
+
+/*forgot-password-success start*/
+
+.forgot-password-success .login .logo {
+    padding-top: 85px;
+    padding-bottom: 160px;
+}
+
+.forgot-password-success .login h2 {
+    padding-bottom: 50px;
+}
+
+.forgot-password-success .button-box {
+    padding-top: 0;
+}
+
+
+/*forgot-password-success end*/
+
+
+/* --------------------------------------------------
+-------------------------------------------------- */

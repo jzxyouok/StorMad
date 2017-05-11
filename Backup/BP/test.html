@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>开始使用layer</title>
+		<style type="text/css">
+			.hide {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button id="test1">小小提示层</button>
+
+		<!-- editPlan -->
+		<div id="editPlan" class="frame-content hide">
+			<div class="frame-body edit-plan">
+				<p>推广计划名称：</p>
+				<input type="text" id=" " placeholder="请输入推广计划名称">
+				<!--<input type="text" class="warning" id=" " placeholder="请输入推广计划名称">-->
+				<button type="button" class="btn btn-default">保存</button>
+			</div>
+		</div>
+		<!-- editPlan end -->
+		
+		
+
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		<script src="extend/layer/layer.js"></script>
+		<script>
+			//弹出一个页面层
+			$('#test1').on('click', function() {
+				$("div#editPlan").removeClass("hide");
+				layer.open({
+					type: 1,
+					area: ['600px', '360px'],
+					shadeClose: true, //点击遮罩关闭
+					content: $('#editPlan')
+//					content: '\<\div style="padding:20px;">自定义内容\<\/div>'
+				});
+			});
+		</script>
+
+	</body>
+
+</html>

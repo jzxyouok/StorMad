@@ -1,0 +1,518 @@
+function API() {}
+API.prototype = {
+    post: function(url, data, cb) {
+        $.ajax({
+            type: 'POST',
+            url: yonghui.contextPath + url,
+            dataType: 'json',
+            data: data,
+            success: cb
+        });
+    },
+    simple: function(str, obj) {
+        return str.replace(/\$\w+\$/gi, function(matchs) {
+            var returns = obj[matchs.replace(/\$/g, "")];
+            return typeof returns === "undefined" ? "" : returns;
+        });
+    }
+};
+var api = new API();
+
+/**
+ * [选择档期]
+ */
+function Bidplan() {
+    this.pageNo = 1;
+    this.pageSize = yonghui.pageSize;
+    this.pageNumFlag = true;
+    this.bpid = '';
+    this.iid = '';
+    this.cstartTime = []; //本期竞拍开始时间
+    this.cendTime = []; //本期竞拍结束时间
+    this.maxMoney = 0; //当前价
+    this.sketchMap = ''; //出价竞拍--广告位置图片url
+    this.cincRange = 0; //加价幅度
+    this.shop = []; //出价竞拍--查看门店
+
+    this.shops = []; //竞拍结果--查看门店
+    this.sketchMaps = []; //竞拍结果--广告位置
+
+    this.init();
+}
+Bidplan.prototype = {
+    /**
+     * [获取档期列表]
+     */
+    getData: function() {
+        var self = this;
+        api.post('/api/bidplan/query.jsp', {
+            pageNo: self.pageNo,
+            pageSize: self.pageSize
+        }, function(res) {
+            if (0 === res.errCode) {
+                if (res.obj.pageCount > 0 && self.pageNumFlag) {
+                    self.pageNumFlag = false;
+                    self.setPageNumber(res.obj.pageCount);
+                }
+                var bigPlanTab = '';
+                var bigPlanItem = '<tr data-bpid="$bpId$"><td><div class="checkbox"><label><span class="checkbox"><input type="radio" name="plan"><i></i></span></label></div></td><td>$bpName$</td><td>$time$</td><td><span class="status-tips ad-Preview"><i class="tips-icon"></i><a href="javascript:void(0);">支付后页面</a></span></td><td><span class="status-tips store-List"><i class="tips-icon"></i><a href="javascript:void(0);">查看门店</a></span></td><td>$chargeCN$</td><td>￥$cbasePrice$</td><td>$statusCN$</td></tr>';
+                res.obj.record && res.obj.record.length && $.each(res.obj.record, function(n, item) {
+                    bigPlanTab += api.simple(bigPlanItem, {
+                        bpId: item.bpId,
+                        bpName: item.bpName,
+                        time: self.formatDate(item.startDate) + '至' + self.formatDate(item.endDate),
+                        chargeCN: item.chargeCN,
+                        cbasePrice: item.cbasePrice / 100,
+                        statusCN: item.statusCN
+                    });
+                    self.cstartTime.push(item.cstartTime);
+                    self.cendTime.push(item.cendTime);
+                });
+                console.log(self.cstartTime);
+                $('#check_list').html(bigPlanTab);
+                $('#check_list tr:first input[type="radio"]').trigger('click');
+                self.bpid = $('#check_list tr:first').data('bpid');
+            } else {
+                layer.msg(res.errMsg);
+            }
+        });
+    },
+    /**
+     * [分页]
+     * @param {[type]} pageCount [总页数]
+     */
+    setPageNumber: function(pageCount) {
+        var self = this;
+        layui.use('laypage', function() {
+            var laypage = layui.laypage,
+                layer = layui.layer;
+            laypage({
+                cont: 'pageNumber',
+                pages: pageCount,
+                skin: '#2089ff',
+                skip: true,
+                groups: yonghui.groups,
+                jump: function(obj, first) {
+                    //得到了当前页，用于向服务端请求对应数据
+                    if (!first) {
+                        self.pageNo = obj.curr;
+                        self.getData();
+                    }
+                }
+            });
+        });
+    },
+    /**
+     * [竞拍热度]
+     * @param  {[type]} num [竞拍数]
+     */
+    getStarDegree: function(num) {
+        if (num < 30) {
+            return 1;
+        }
+        if (num > 30) {
+            return 2;
+        }
+        if (num > 60) {
+            return 3;
+        }
+        if (num > 100) {
+            return 4;
+        }
+        if (num > 200) {
+            return 5;
+        }
+    },
+    /**
+     * [设置竞拍热度星星展示]
+     * @param {[type]} ele [节点]
+     * @param {[type]} num [星星数量]
+     */
+    setStar: function(ele, num) {
+        ele.removeClass('disabled');
+        $.each(ele, function(index, val) {
+            if (index > num) {
+                $(val).addClass('disabled');
+            }
+        });
+
+    },
+    /**
+     * [把毫秒数转化成日期格式yy-mm-dd]
+     * @param  {[type]} time [毫秒数]
+     * @return {[type]}      [格式为yy-mm-dd的日期]
+     */
+    formatDate: function(time, format) {
+        var date = new Date(time),
+            formatDate = [date.getFullYear(), (date.getMonth() + 1 + '').replace(/^(\d)$/, "0$1"), (date.getDate() + '').replace(/^(\d)$/, "0$1")].join('-');
+        if (format && format === 'YYYY-MM-DD HH:MM:SS') {
+            return formatDate + ' ' + (date.getHours() + '').replace(/^(\d)$/, "0$1") + ':' + (date.getMinutes() + '').replace(/^(\d)$/, "0$1") + ':' + (date.getSeconds() + '').replace(/^(\d)$/, "0$1");
+        } else {
+            return formatDate;
+        }
+    },
+    /**
+     * [查看门店]
+     * @param  {[type]} bpId [档期ID]
+     */
+    seeStore: function(bpId) {
+        api.post('/api/bidplan/query.jsp', {
+            op: 1,
+            bpId: bpId
+        }, function(res) {
+            if (0 === res.errCode) {
+                var storeList = '';
+                res.obj.shops && res.obj.shops.length > 0 && $.each(res.obj.shops, function(n, item) {
+                    storeList += '<li>' + item.shopName + '</li>'
+                });
+                layer.open({
+                    type: 1,
+                    area: ['340px', 'auto'],
+                    title: false,
+                    shadeClose: true,
+                    closeBtn: 0,
+                    content: '<div class="frame-content"><div class="frame-body store-list"><h3>该档期投放门店</h3><ul>' + storeList + '</ul></div></div>'
+                });
+            } else {
+                layer.msg(res.errMsg);
+            }
+        });
+    },
+    /**
+     * [行业信息]
+     * @param  {[type]} bpId [档期ID]
+     * @param  {[type]} $ele [当前档期节点]
+     */
+    getIndustry: function(bpId, $ele) {
+        var self = this;
+        if (!$ele.next('tr').hasClass('extend')) {
+            api.post('/api/bidplan/query.jsp', {
+                op: 1,
+                bpId: bpId
+            }, function(res) {
+                if (0 === res.errCode) {
+                    var industry = '',
+                        buttons = '';
+                    res.obj.industries && res.obj.industries.length > 0 && $.each(res.obj.industries, function(n, item) {
+                        buttons += '<button type="button" data-iid="' + item.iid + '" data-grade="' + self.getStarDegree(item.operator) + '">' + item.iname + '</button>';
+                    });
+                    industry = '<tr class="extend"><td colspan="8"><div class="row"><div class="col-md-1 choice-title">选择行业：</div><div class="col-md-8 industry">' + buttons + '</div><div class="col-md-3 perfunctory"><p><span class="industry-Type"></span>行业竞拍热度：<i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star disabled" aria-hidden="true"></i></p><button type="button" class="btn btn-default btn-auction">竞拍</button></div></div></td></tr>';
+                    $ele.after(industry);
+                    $ele.next('.extend').find('button:first').trigger('click');
+                    self.iid = $ele.next('.extend').find('button:first').data('iid');
+                    // $('.extend button:first').trigger('click');
+                } else {
+                    layer.msg(res.errMsg);
+                }
+            });
+        } else {
+            $ele.next('.extend').show();
+        }
+    },
+    /**
+     * [出价竞拍档期信息]
+     */
+    getBid: function() {
+        var self = this;
+        api.post('/api/bid/getMaxBidLog.jsp', {
+            bpId: self.bpid,
+            iId: self.iid
+        }, function(res) {
+            if (0 === res.errCode) {
+                var obj = res.obj;
+                self.maxMoney = obj.maxMoney / 100;
+                self.sketchMap = obj.alList[0].sketchMap;
+                self.shop = obj.shops;
+                self.cincRange = obj.cincRange / 100;
+                $('#bpName').html(obj.bpName);
+                $('#cbasePrice').html(obj.cbasePrice / 100);
+                $('#bidName').html(obj.bidName);
+                $('#maxMoney').html(obj.maxMoney / 100);
+                $('#iname').html(obj.iname);
+                $('#cincRange').html(obj.cincRange / 100);
+                $('#money').html(obj.money / 100);
+                $('#chargeType').html(obj.chargeType);
+                $('#currentBidMoney').val(obj.maxMoney / 100);
+                $('#bidTime').html(self.formatDate(obj.bidStartTime) + '至' + self.formatDate(obj.bidEndTime));
+                self.descDisabled();
+            }
+        });
+    },
+    /**
+     * [出价竞拍]
+     */
+    bidding: function() {
+        var self = this;
+        api.post('/api/bid/bid.jsp', {
+            bpId: self.bpid,
+            iId: self.iid,
+            money: $('#currentBidMoney').val() * 100
+        }, function(res) {
+            if (0 === res.errCode && true === res.obj) {
+                layer.closeAll();
+                layer.open({
+                    type: 1,
+                    area: ['580px', 'auto'],
+                    title: false,
+                    title: ['竞拍结果', 'color:#666;font-size:14px;font-weight:bold;'],
+                    shadeClose: true,
+                    content: '<div id="payTips" class="frame-content"><div class="frame-body pay-tips-02"><div class="top"><p class="warning">恭喜您出价成功╰(￣▽￣)╮</p><p>您的出价：<span>￥' + $('#currentBidMoney').val() + '</span></p></div><div class="bottom"><button type="button" class="btn btn-default" id="btnBidSuccess">我知道了</button></div></div></div>',
+                    end: function() {
+                        self.getBidResult();
+                        $('.nav-tabs li:eq(2) a').tab('show').trigger('click');
+                    }
+                });
+
+                /*layer.msg('出价竞拍成功', {
+                    time: 800
+                }, function() {
+                    self.getBidResult();
+                    $('.nav-tabs li:eq(2) a').tab('show').trigger('click');
+                });*/
+            } else {
+                layer.closeAll();
+                var tips = '';
+                tips = (5005 === res.errCode ? '<div id="payTips" class="frame-content"><div class="frame-body pay-tips-02"><div class="top"><p class="warning">很遗憾，由于您余额不足，此次竞拍失败 ⊙﹏⊙‖∣</p><p>若想继续参与竞拍，请确保您的账户余额充足！<span><a href="/ad/account.html">立即充值</a></span></p></div><div class="bottom"><button type="button" class="btn btn-default" id="btnBidFail">我知道了</button></div></div></div>' : '<div id="payTips" class="frame-content"><div class="frame-body pay-tips-02"><div class="top"><p class="warning">出价失败⊙﹏⊙‖∣</p><p>' + res.errMsg + '</p></div><div class="bottom"><button type="button" class="btn btn-default" id="btnBidFail">我知道了</button></div></div></div>');
+                layer.open({
+                    type: 1,
+                    area: ['580px', 'auto'],
+                    title: false,
+                    title: ['竞拍结果', 'color:#666;font-size:14px;font-weight:bold;'],
+                    shadeClose: true,
+                    content: tips
+                });
+            }
+        });
+    },
+    /**
+     * [出价"减"按钮设置不可减]
+     */
+    descDisabled: function() {
+        $('#currentBidMoney').val() <= this.maxMoney ? $('.desc').addClass('disabled') : $('.desc').removeClass('disabled');
+    },
+
+    /**
+     * [获取竞拍结果]
+     */
+    getBidResult: function() {
+        var self = this;
+        api.post('/api/bid/getBidLogs.jsp', {
+            bpId: self.bpid,
+            iId: self.iid
+        }, function(res) {
+            if (0 === res.errCode) {
+                var resultList = '';
+                var resultItem = '<tr><td>$bidTime$</td><td>$bpName$</td><td>$time$</td><td><span class="status-tips ad-Preview"><i class="tips-icon"></i><a href="javascript:void(0);">支付后页面</a></span></td><td><span class="status-tips store-List"><i class="tips-icon"></i><a href="javascript:void(0);">查看门店</a></span></td><td>$iname$</td><td>￥$money$</td><td>$status$</td><td class="go-on">$btnOp$</td></tr>';
+                $.each(res.obj, function(n, item) {
+                    self.shops.push(item.shops);
+                    self.sketchMaps.push(item.alList[0].sketchMaps);
+                    resultList += api.simple(resultItem, {
+                        bidTime: self.formatDate(item.bidTime),
+                        bpName: item.bpName,
+                        time: self.formatDate(item.cstartTime) + '至' + self.formatDate(item.cendTime),
+                        iname: item.iname,
+                        money: item.money / 100,
+                        status: item.status.substr(2),
+                        btnOp: item.bpStatus === 1 ? '<button type="button" class="btn btn-default" id="btnBidContinue">继续竞拍</button>' : ((item.status[0] === '3') && (item.bpStatus === 2) ? '<button type="button" class="btn btn-default">广告绑定</button>' : '<button type="button" class="btn btn-default layui-btn-disabled">竞拍失败</button>')
+                    });
+                });
+                $('#bidResult').html(resultList);
+            } else {
+                layer.msg(res.errMsg);
+            }
+        })
+    },
+    getBidRecord: function() {
+        var self = this;
+        api.post('/api/bid/getMaxMoneyFromDate.jsp', {
+            bpId: self.bpid,
+            iId: self.iid
+        }, function(res) {
+            if (0 === res.errCode) {
+                var recordList = '';
+                var recordItem = '<tr><td>$date$</td><td>￥$money$</td></tr>';
+                $.each(res.obj, function(n, item) {
+                    recordList += api.simple(recordItem, {
+                        date: item.date,
+                        money: item.money / 100
+                    })
+                });
+                $('#bidRecord').html(recordList);
+            } else {
+                layer.msg(res.errMsg);
+            }
+        });
+    },
+    bindEvent: function() {
+        var self = this;
+        $('#check_list').on('click', '.store-List', function() {
+            // 选择档期--门店列表弹窗
+            self.seeStore($(this).closest('tr').data('bpid'));
+        }).on('change', 'input[type="radio"]', function() {
+            // 选择档期--单选按钮
+            $('tr.extend').hide();
+            var $tr = $(this).closest('tr');
+            if ($(this).is(':checked')) {
+                $tr.addClass('active').siblings('tr').removeClass('active');
+                self.bpid = $tr.data('bpid');
+                self.getIndustry($tr.data('bpid'), $tr);
+                $('#startTime').html(self.formatDate(self.cstartTime[$tr.index()], 'YYYY-MM-DD HH:MM:SS'));
+                $('#endTime').html(self.formatDate(self.cendTime[$tr.index()], 'YYYY-MM-DD HH:MM:SS'));
+            } else {
+                if ($tr.next().hasClass('extend')) {
+                    $tr.next('.extend').hide();
+                }
+            }
+        }).on('click', '.industry button', function() {
+            // 选择档期--行业选择按钮
+            var $perfunctory = $(this).closest('.industry').siblings('.perfunctory');
+            $(this).addClass('active').siblings('button').removeClass('active');
+            $perfunctory.find('.industry-Type').html($(this).text());
+            self.setStar($perfunctory.find('.fa-star'), $(this).data('grade'));
+            self.iid = $(this).data('iid');
+        }).on('click', '.btn-auction', function() {
+            self.bpid = $(this).closest('.extend').prev('tr').data('bpid');
+            self.iid = $(this).closest('.extend').find('button.active').data('iid');
+            $('.nav-tabs li:eq(1) a').tab('show').trigger('click');
+            // self.getBid();
+        });
+
+        //出价竞拍-出价加减
+        $('.add-delete').on('click', '.desc:not(.disabled)', function() {
+            $('#currentBidMoney').val(parseInt($('#currentBidMoney').val()) - self.cincRange);
+            self.descDisabled();
+        }).on('click', '.add', function() {
+            $('#currentBidMoney').val(parseInt($('#currentBidMoney').val()) + self.cincRange);
+            self.descDisabled();
+        });
+        // 出价竞拍--广告位置预览弹窗
+        self.sketchMap && $('body').on('click', '.auction-detail span.ad-Preview', function() {
+            layer.open({
+                type: 1,
+                area: ['auto', 'auto'],
+                title: false,
+                shadeClose: true,
+                closeBtn: 0,
+                content: '<div class="frame-content"><div class="frame-body ad-previes"><img src="' + self.sketchMap + '" /></div></div>'
+            });
+        });
+        // 出价竞拍--门店列表弹窗
+        $('#offer').on('click', '.store-List', function() {
+            var storeList = '';
+            $.each(self.shop, function(n, item) {
+                storeList += '<li>' + item.shopName + '</li>';
+            });
+            layer.open({
+                type: 1,
+                area: ['340px', 'auto'],
+                title: false,
+                shadeClose: true,
+                closeBtn: 0,
+                content: '<div class="frame-content"><div class="frame-body store-list"><h3>该档期投放门店</h3><ul>' + storeList + '</ul></div></div>'
+            });
+        }).on('click', '#btnBid', function() {
+            // 出价竞拍--出价
+            layer.open({
+                type: 1,
+                area: ['580px', 'auto'],
+                title: false,
+                title: ['竞拍结果', 'color:#666;font-size:14px;font-weight:bold;'], //自定义标题
+                shadeClose: true,
+                content: '<div id="payTips" class="frame-content"><div class="frame-body pay-tips-01"><div class="top"><p>竞拍档期：<span>' + $('#bpName').text() + '</span></p><p>您的出价：<span>￥' + $('#currentBidMoney').val() + '</span></p>' + ($('#maxMoney').text() === $('#money').text() ? '<p style="color: #E6614F;">温馨提示：当前您的出价已为最高出价，请确认是否继续出价。</p >' : '') + '</div><p class="read">1、出价成功后，系统将暂时冻结您账户中对应的余额，余额不足则出价失败。<br />2、请保持关注，若有同行出价高于您的出价，则系统会即时解冻您被冻结的余额。 </p><div class="bottom"><button type="button" class="btn btn-default" id="btnConfirmBid">确认出价</button></div></div></div>'
+            });
+        });
+        $('body').on('click', '#btnConfirmBid', function() {
+            // 出价竞拍--确认出价
+            self.bidding();
+        }).on('click', '#btnBidSuccess', function() {
+            // 出价成功
+            layer.closeAll();
+        }).on('click', '#btnBidFail', function() {
+            // 出价成功
+            layer.closeAll();
+            $('.nav-tabs li:eq(1) a').tab('show').trigger('click');
+        });
+        // 显示隐藏本期竞拍记录
+        $(".record-show").click(function() {
+            self.getBidRecord();
+            if ($(".record-list").hasClass("hide")) {
+                $(".record-list").removeClass("hide");
+                $(".record-show").animate({
+                    left: 0
+                }, 0);
+            } else {
+                $(".record-list").addClass("hide");
+                $(".record-show").animate({
+                    left: 348
+                }, 0);
+            }
+        });
+
+        $('#bidResult').on('click', '.store-List', function() {
+            // 竞拍结果--门店弹窗
+            var storeList = '';
+            $.each(self.shops[$(this).closest('tr').index()], function(n, item) {
+                storeList += '<li>' + item.shopName + '</li>';
+            });
+            layer.open({
+                type: 1,
+                area: ['340px', 'auto'],
+                title: false,
+                shadeClose: true,
+                closeBtn: 0,
+                content: '<div class="frame-content"><div class="frame-body store-list"><h3>该档期投放门店</h3><ul>' + storeList + '</ul></div></div>'
+            });
+        }).on('click', '.ad-Preview', function() {
+            // 竞拍结果--广告位置预览弹窗
+            layer.open({
+                type: 1,
+                area: ['auto', 'auto'],
+                title: false,
+                shadeClose: true,
+                closeBtn: 0,
+                content: '<div id="adPreview" class="frame-content"><div class="frame-body ad-previes"><img src="' + self.sketchMaps[$(this).closest('tr').index()] + '" /></div></div>'
+            });
+        }).on('click', '#btnBidContinue', function() {
+            self.getData();
+            $('.nav-tabs li:eq(0) a').tab('show').trigger('click');
+        });
+        // 选项卡切换
+        $(".auction .nav-tabs li:nth-child(1)").click(function() {
+            $(".auction .nav-tabs").css("background-position-y", "0");
+            $("div#auction-record").addClass("hide");
+            $(".record-list").addClass("hide");
+            $(".record-show").animate({
+                left: 348
+            }, 0);
+        });
+        $(".auction .nav-tabs li:nth-child(2)").click(function() {
+            $(".auction .nav-tabs").css("background-position-y", "-50px");
+            $("div#auction-record").removeClass("hide");
+            self.getBid();
+        });
+        $(".auction .nav-tabs li:nth-child(3)").click(function() {
+            $(".auction .nav-tabs").css("background-position-y", "-100px");
+            $("div#auction-record").addClass("hide");
+            $(".record-list").addClass("hide");
+            $(".record-show").animate({
+                left: 348
+            }, 0);
+            self.getBidResult();
+        });
+    },
+    init: function() {
+        this.bindEvent();
+        this.getData();
+    }
+}
+
+layui.use('form', 'upload', 'layedit', 'laydate', 'laypage', 'layer', function() {
+    var form = layui.form(),
+        layer = layui.layer,
+        laypage = layui.laypage,
+        layedit = layui.layedit,
+        laydate = layui.laydate;
+});
+$(function() {
+    new Bidplan();
+});

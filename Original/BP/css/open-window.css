@@ -1,0 +1,904 @@
+.layui-form-select ul li {
+	text-align: left;
+}
+
+.layui-form-select dl dd.layui-this {
+	background-color: #e6614f;
+	color: #fff;
+}
+
+.carousel-caption {
+    color: #555;
+    padding-bottom: 15px;
+}
+
+.carousel-caption h2 {
+    font-size: 16px;
+}
+
+
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,0);
+    filter: alpha(opacity=20);
+    opacity: .1;
+}
+
+.carousel-control:focus, .carousel-control:hover {
+    color: #fff;
+    text-decoration: none;
+    filter: alpha(opacity=30);
+    outline: 0;
+    opacity: .2;
+}
+
+
+/*pay-tips*/
+
+.layui-layer-content .frame-body {
+	padding: 20px 40px 40px 40px;
+}
+
+.layui-layer-content .pay-tips-01 .top {
+	border-bottom: 1px solid #d5d5d5;
+	padding-bottom: 15px;
+}
+
+.layui-layer-content .frame-body p {
+	color: #75757a;
+	font-size: 14px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.layui-layer-content .frame-body .top p span {
+	color: #e6614f;
+	font-weight: bold;
+}
+
+.layui-layer-content .pay-tips-01 p.read {
+	text-align: left;
+	line-height: 24px;
+	padding-top: 20px;
+	/*text-indent: 1px;*/
+	letter-spacing: -1px;
+}
+
+.layui-layer-content .frame-body .bottom {
+	text-align: center;
+	padding-top: 25px;
+}
+
+.layui-layer-content .frame-body .bottom .btn-default {
+	color: #fff;
+	text-shadow: none;
+	width: 120px;
+	height: 36px;
+	background-color: #e6614f;
+	border: 1px solid #c74545;
+	outline: 0;
+}
+
+.layui-layer-content .frame-body .bottom .btn-default:hover {
+	color: #fff;
+	text-shadow: none;
+	background-color: #f5715f;
+	border: 1px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.layui-layer-content .frame-body .bottom .btn-default:active {
+	color: #fff;
+	background-color: #f5715f;
+	border-color: transparent;
+	border-top: 4px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.layui-layer-content .pay-tips-02 .top {
+	padding-top: 30px;
+}
+
+.layui-layer-content .pay-tips-02 .top p.warning,
+.layui-layer-content .result-tips .top p.warning {
+	color: #e6614f;
+	font-weight: bold;
+	padding-bottom: 15px;
+}
+
+.layui-layer-content .result-tips .top p.title,
+.layui-layer-content .result-tips .top p.warning {
+	text-align: left;
+}
+
+.layui-layer-content .pay-tips-02 .top p span a,
+.layui-layer-content .result-tips .top p span a {
+	color: #e6614f;
+	font-weight: normal;
+}
+
+.layui-layer-content .pay-tips-02 .bottom {
+	padding-bottom: 20px;
+}
+
+
+/*pay-tips end*/
+
+
+/*ad-previes*/
+
+.layui-layer-content .ad-previes {
+	padding: 20px;
+}
+
+
+/*ad-previes end*/
+
+
+/*store-list*/
+
+.layui-layer-content .store-list {
+	padding: 0px 40px 40px 40px;
+}
+
+.layui-layer-content .store-list h3 {
+	color: #e6614f;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 66px;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+.layui-layer-content .store-list ul {
+	padding-top: 25px;
+	max-height: 430px;
+	overflow-y: scroll;
+}
+
+.layui-layer-content .store-list ul li {
+	color: #2d2b2b;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+
+/*store-list end*/
+
+
+/*result-tips*/
+
+.layui-layer-content .result-tips {
+	padding: 20px 40px 40px 40px;
+}
+
+.layui-layer-content .result-tips h2 {
+	color: #75757a;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 50px;
+	/*text-align: center;*/
+}
+
+.layui-layer-content .result-tips p {
+	color: #75757a;
+	font-size: 14px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.layui-layer-content .result-tips .top p.warning {
+	color: #e6614f;
+	font-weight: bold;
+	padding-bottom: 15px;
+}
+
+.layui-layer-content .result-tips .top p.warning {
+	text-align: left;
+}
+
+.layui-layer-content .result-tips .top p span a {
+	color: #e6614f;
+	font-weight: normal;
+}
+
+.layui-layer-content .result-tips .bottom {
+	text-align: center;
+	padding-top: 25px;
+}
+
+.layui-layer-content .result-tips .bottom .btn-default {
+	color: #fff;
+	text-shadow: none;
+	width: 120px;
+	height: 36px;
+	background-color: #e6614f;
+	border: 1px solid #c74545;
+	outline: 0;
+}
+
+.layui-layer-content .result-tips .bottom .btn-default:hover {
+	color: #fff;
+	text-shadow: none;
+	background-color: #f5715f;
+	border: 1px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.layui-layer-content .result-tips .bottom .btn-default:active {
+	color: #fff;
+	background-color: #f5715f;
+	border-color: transparent;
+	border-top: 4px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+
+/*result-tips end*/
+
+
+/*editPlan*/
+
+.layui-layer-content .edit-plan,
+.layui-layer-content .edit-group {
+	padding: 20px 100px 40px 100px;
+	/*text-align: center;*/
+}
+
+.layui-layer-content .edit-plan p,
+.layui-layer-content .edit-group p {
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.layui-layer-content .edit-plan input[type="text"] {
+	color: #bababa;
+	font-size: 12px;
+	width: 360px;
+	/*width: 100%;*/
+	height: 50px;
+	padding-left: 20px;
+	border: 1px solid #d5d5d5;
+	border-radius: 2px;
+	margin-bottom: 25px;
+}
+
+.layui-layer-content .edit-plan input.warning,
+.layui-layer-content .edit-group input.warning {
+	color: #e6614f;
+	border-color: #c47773;
+	box-shadow: none;
+}
+
+.layui-layer-content .edit-plan .btn-default,
+.layui-layer-content .edit-group .btn-default {
+	display: block;
+	color: #fff;
+	font-size: 12px;
+	width: 120px;
+	height: 35px;
+	background-color: #e6614f;
+	border-radius: 2px;
+	border: 1px solid #c74545;
+	outline: 0;
+	margin: 0 auto;
+}
+
+.layui-layer-content .edit-plan .btn-default:hover,
+.layui-layer-content .edit-group .btn-default:hover {
+	color: #fff;
+	text-shadow: none;
+	background-color: #f5715f;
+	border: 1px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.layui-layer-content .edit-plan .btn-default:active,
+.layui-layer-content .edit-group .btn-default:active {
+	color: #fff;
+	background-color: #f5715f;
+	border-color: transparent;
+	border-top: 4px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+
+/*editPlan end*/
+
+
+/*editGroup*/
+
+.edit-group .layui-form-select .layui-input {
+	position: relative;
+	color: #666;
+	font-size: 12px;
+	/*width: auto;*/
+	height: 40px;
+	padding-left: 20px;
+	border: 1px solid #d5d5d5;
+	border-radius: 2px;
+	margin-bottom: 25px;
+}
+
+.edit-group input[type="text"].group-name {
+	color: #bababa;
+	font-size: 12px;
+	/*width: 360px;*/
+	width: 100%;
+	height: 50px;
+	padding-left: 20px;
+	border: 1px solid #d5d5d5;
+	border-radius: 2px;
+	margin-bottom: 25px;
+}
+
+
+/*editGroup end*/
+
+
+/*adBinding*/
+
+/*.layui-layer-content .ad-binding {
+	padding: 20px 30px 40px 30px;
+}
+
+.ad-binding .explain p {
+	display: inline-block;
+	color: #666;
+	font-size: 14px;
+	line-height: 36px;
+	margin-right: 50px;
+}
+
+.ad-binding .explain p span {
+	color: #e6614f;
+	font-weight: bold;
+}
+
+.ad-binding .explain p span.tips-text {
+	color: #666;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.ad-binding .btn-default {
+	color: #fff;
+	font-size: 12px;
+	height: 36px;
+	background-color: #e6614f;
+	border-radius: 2px;
+	border: 1px solid #c74545;
+	outline: 0;
+}
+
+.ad-binding .btn-default:hover {
+	color: #fff;
+	text-shadow: none;
+	background-color: #f5715f;
+	border: 1px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.ad-binding .btn-default:active {
+	color: #fff;
+	background-color: #f5715f;
+	border-color: transparent;
+	border-top: 4px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.ad-binding .explain .btn-default {
+	display: inline-block;
+	width: 100px;
+}
+
+.ad-binding .table-responsive {
+	margin-top: 20px;
+}
+
+.ad-binding .table> tbody> tr> td:first-child {
+	color: #e6614f;
+}
+
+.ad-binding .table> tbody> tr> td:last-child .btn-default {
+	padding: 0 25px;
+}*/
+
+
+/*adBinding end*/
+
+
+/*submitReview*/
+
+.layui-layer-content .submit-review {
+	padding: 70px 60px 40px 60px;
+}
+
+.layui-layer-content .submit-review p {
+	display: inline-block;
+	width: 100%;
+	color: #e6614f;
+	font-size: 14px;
+	text-align: center;
+	line-height: 26px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+.submit-review .button-box {
+	text-align: center;
+}
+
+.submit-review .btn-default {
+	color: #fff;
+	font-size: 12px;
+	width: 120px;
+	height: 36px;
+	background-color: #e6614f;
+	border-radius: 2px;
+	border: 1px solid #c74545;
+	outline: 0;
+	margin-right: 10px;
+}
+
+.submit-review .btn-default:hover {
+	color: #fff;
+	text-shadow: none;
+	background-color: #f5715f;
+	border: 1px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.submit-review .btn-default:active {
+	color: #fff;
+	background-color: #f5715f;
+	border-color: transparent;
+	border-top: 4px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.submit-review .explain .btn-default {
+	display: inline-block;
+	width: 100px;
+}
+
+
+/*submitReview end*/
+
+
+/*adTextPic*/
+
+.layui-layer-content .ad-text-pic {
+	min-width: 500px;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #d5d5d5;
+}
+
+.layui-layer-content .ad-text-pic img {
+	width: 100%;
+	max-height: 600px;
+}
+
+.layui-layer-content .ad-text-pic p {
+	color: #666;
+	font-size: 14px;
+	text-align: center;
+	line-height: 26px;
+}
+
+
+/*adTextPic end*/
+
+
+/*weChatPay*/
+
+.layui-layer-content .container {
+	max-width: 600px;
+}
+
+.layui-layer-content .we-chat-pay {
+	padding: 30px;
+	background-color: #fff;
+	border: 1px solid #d5d5d5;
+}
+
+.layui-layer-content .we-chat-pay .col-md-6 {
+	text-align: center;
+}
+
+.layui-layer-content .we-chat-pay p {
+	color: #75757a;
+	font-size: 14px;
+	line-height: 26px;
+	margin-bottom: 15px;
+}
+
+.layui-layer-content .we-chat-pay p span {
+	color: #e6614f;
+}
+
+.layui-layer-content .we-chat-pay img {
+	width: auto;
+	height: 180px;
+}
+
+
+/*weChatPay end*/
+
+
+/*payFailed*/
+
+.layui-layer-content .pay-failed {
+	text-align: center;
+}
+
+.layui-layer-content .pay-failed p {
+	color: #e6614f;
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: bold;
+	margin: 60px 0 30px 0;
+}
+
+.layui-layer-content .pay-failed .btn-default {
+	color: #fff;
+	font-size: 12px;
+	height: 36px;
+	background-color: #e6614f;
+	border-radius: 2px;
+	border: 1px solid #c74545;
+	outline: 0;
+	padding: 0 30px;
+	margin-right: 10px;
+}
+
+.layui-layer-content .pay-failed .btn-default:hover {
+	color: #fff;
+	text-shadow: none;
+	background-color: #f5715f;
+	border: 1px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.layui-layer-content .pay-failed .btn-default:active {
+	color: #fff;
+	background-color: #f5715f;
+	border-color: transparent;
+	border-top: 4px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+
+/*payFailed end*/
+
+
+/*shippingAddressEdit*/
+
+.layui-layer-content .shipping-address-edit {
+	padding: 50px 40px;
+}
+
+.layui-layer-content .shipping-address-edit .layui-form-label {
+	float: left;
+	display: block;
+	color: #666;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 50px;
+	width: auto;
+	padding: 0 10px;
+}
+
+.layui-layer-content .shipping-address-edit .lastInput {
+	margin-right: 0;
+}
+
+.layui-layer-content .shipping-address-edit .layui-input {
+	line-height: 50px;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.layui-layer-content .shipping-address-edit .layui-form-select dl {
+	overflow-y: scroll;
+	max-height: 255px;
+}
+
+.layui-layer-content .shipping-address-edit .button-box {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.layui-layer-content .shipping-address-edit .button-box .btn-default {
+	color: #fff;
+	text-shadow: none;
+	width: 120px;
+	height: 36px;
+	background-color: #e6614f;
+	border: 1px solid #c74545;
+	outline: 0;
+	margin-right: 10px;
+}
+
+.layui-layer-content .shipping-address-edit .button-box .btn-default:hover,
+.layui-layer-content .shipping-address-edit .button-box .btn-default:focus {
+	color: #fff;
+	text-shadow: none;
+	background-color: #f5715f;
+	border: 1px solid #c74545;
+	outline: 0;
+}
+
+.layui-layer-content .shipping-address-edit .button-box .btn-default:active:focus {
+	color: #fff;
+	background-color: #f5715f;
+	border-color: transparent;
+	border-top: 5px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+
+/*shippingAddressEdit end*/
+
+
+/*shippingAddressDelete*/
+
+.layui-layer-content .shipping-address-delete {
+	padding: 50px 40px;
+}
+
+.layui-layer-content .shipping-address-delete p {
+	color: #e6614f;
+	font-size: 14px;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.layui-layer-content .shipping-address-delete .button-box {
+	text-align: center;
+	padding-top: 30px;
+}
+
+.layui-layer-content .shipping-address-delete .button-box .btn-default {
+	color: #fff;
+	text-shadow: none;
+	width: 120px;
+	height: 36px;
+	background-color: #e6614f;
+	border: 1px solid #c74545;
+	outline: 0;
+	margin-right: 10px;
+}
+
+.layui-layer-content .shipping-address-delete .button-box .btn-default:hover,
+.layui-layer-content .shipping-address-delete .button-box .btn-default:focus {
+	color: #fff;
+	text-shadow: none;
+	background-color: #f5715f;
+	border: 1px solid #c74545;
+	outline: 0;
+}
+
+.layui-layer-content .shipping-address-delete .button-box .btn-default:active:focus {
+	color: #fff;
+	background-color: #f5715f;
+	border-color: transparent;
+	border-top: 5px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+
+/*shippingAddressDelete end*/
+
+
+/*payFailed*/
+
+.layui-layer-content .apply-tips {
+	text-align: center;
+}
+
+.layui-layer-content .apply-tips p {
+	color: #e6614f;
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: bold;
+	margin: 50px 0 20px 0;
+}
+
+.layui-layer-content .apply-tips p.apply-tips {
+	color: #75757a;
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: normal;
+	margin: 0;
+	margin-bottom: 30px;
+}
+
+.layui-layer-content .apply-tips .btn-default {
+	color: #fff;
+	font-size: 12px;
+	height: 36px;
+	line-height: 36px;
+	background-color: #e6614f;
+	border-radius: 2px;
+	border: 1px solid #c74545;
+	outline: 0;
+	padding: 0 30px;
+	margin-bottom: 40px;
+}
+
+.layui-layer-content .apply-tips .btn-default:hover {
+	color: #fff;
+	text-shadow: none;
+	background-color: #f5715f;
+	border: 1px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.layui-layer-content .apply-tips .btn-default:active {
+	color: #fff;
+	background-color: #f5715f;
+	border-color: transparent;
+	border-top: 4px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+
+/*payFailed end*/
+
+
+/*invoiceCheck*/
+
+.layui-layer-content .invoice-check {
+	padding: 25px 60px 40px 60px;
+}
+
+.layui-layer-content .invoice-check p.tips {
+	color: #666;
+	font-size: 12px;
+	line-height: 26px;
+}
+
+.layui-layer-content .invoice-check p.tips span {
+	color: #e6614f;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.layui-layer-content .invoice-check .info {
+	padding: 20px 0;
+	margin: 20px 0;
+	border-top: 1px solid #d5d5d5;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+.layui-layer-content .invoice-check .info p {
+	color: #666;
+	font-size: 14px;
+	line-height: 28px;
+	text-align: left;
+}
+
+.layui-layer-content .invoice-check .info p.title {
+	color: #953232;
+	font-size: 14px;
+	line-height: 28px;
+}
+
+.layui-layer-content .invoice-check .info p span.cash {
+	color: #e6614f;
+	font-weight: bold;
+}
+
+.layui-layer-content .invoice-check .button-box {
+	text-align: center;
+}
+
+.layui-layer-content .invoice-check .button-box .btn-default {
+	color: #fff;
+	font-size: 12px;
+	height: 36px;
+	background-color: #e6614f;
+	border-radius: 2px;
+	border: 1px solid #c74545;
+	outline: 0;
+	padding: 0 30px;
+}
+
+.layui-layer-content .invoice-check .button-box .btn-default:hover {
+	color: #fff;
+	text-shadow: none;
+	background-color: #f5715f;
+	border: 1px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.layui-layer-content .invoice-check .button-box .btn-default:active {
+	color: #fff;
+	background-color: #f5715f;
+	border-color: transparent;
+	border-top: 4px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+
+/*invoiceCheck end*/
+
+
+/*dataDetail*/
+
+/*.layui-layer-content .data-detail {
+	text-align: center;
+}*/
+
+.layui-layer-content .data-detail .table-responsive {
+	border-top: none;
+	max-height: 380px;
+	overflow-y: scroll;
+}
+
+.layui-layer-content .data-detail .table-hover > tbody > tr:hover td {
+    font-weight: normal !important;
+}
+
+.layui-layer-content .data-detail .button-box {
+	text-align: center;
+}
+
+.layui-layer-content .data-detail .button-box .btn-default {
+	color: #fff;
+	font-size: 12px;
+	height: 36px;
+	background-color: #e6614f;
+	border-radius: 2px;
+	border: 1px solid #c74545;
+	outline: 0;
+	padding: 0 30px;
+}
+
+.layui-layer-content .data-detail .button-box .btn-default:hover {
+	color: #fff;
+	text-shadow: none;
+	background-color: #f5715f;
+	border: 1px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+.layui-layer-content .data-detail .button-box .btn-default:active {
+	color: #fff;
+	background-color: #f5715f;
+	border-color: transparent;
+	border-top: 4px solid #c74545;
+	box-shadow: none;
+	outline: 0;
+}
+
+
+/*dataDetail end*/

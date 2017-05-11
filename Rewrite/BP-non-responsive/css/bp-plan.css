@@ -1,0 +1,44 @@
+ /* --------------------------------------------------
+-------------------------------------------------- */
+ /*plan end*/
+ 
+ .plan p.remind {
+     color: #666;
+     font-size: 12px;
+     line-height: 24px;
+     margin-bottom: 20px;
+ }
+ 
+ .plan p.remind span {
+     color: #e6614f;
+     font-size: 12px;
+     line-height: 24px;
+ }
+ 
+ .button-group {
+     margin-bottom: 12px;
+ }
+ 
+ .button-group .btn-default {
+     width: auto;
+     height: 40px;
+     padding: 0 30px;
+ }
+ 
+ .plan .table> thead> tr> th .fa {
+     padding-left: 3px;
+     padding-right: 0;
+ }
+ 
+ .plan .table> tbody> tr> td {
+     color: #666;
+     font-size: 12px;
+ }
+ 
+ .table-hover> tbody> tr.active> td:nth-child(8),
+ .table-hover> tbody> tr:hover> td:nth-child(8) {
+     color: #e6614f;
+ }
+ /*plan end*/
+ /* --------------------------------------------------
+-------------------------------------------------- */
